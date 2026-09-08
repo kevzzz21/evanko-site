@@ -1,3 +1,4 @@
+/* eslint-disable next/no-img-element -- Static export uses local images without an image server. */
 const projects = [
   { name: 'Gardenish', href: 'https://gardenish.co', image: '/gardenishlogo.png' },
   { name: 'FlashFluent', href: 'https://flashfluent.app', image: '/FlashFluentLogo.jpg' },
