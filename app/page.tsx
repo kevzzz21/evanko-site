@@ -16,27 +16,29 @@ export default function Home() {
         <section className="section" aria-labelledby="funding-title">
           <h2 id="funding-title">01 / What we fund</h2>
           <div className="section-content">
-            <p className="placeholder-label">Placeholder · funding focus</p>
-            <p>Educational tools. Open learning resources. New ways to share knowledge.</p>
-            <p className="muted">More about the projects we support will go here.</p>
+            <p>We support projects that make data easier to share, information easier to access, and education more accessible.</p>
+            <p className="funding-request">We accept funding requests for projects focused on education or supporting the next generation of leaders, educators, and entrepreneurs.</p>
           </div>
         </section>
         <section className="section" aria-labelledby="projects-title">
-          <h2 id="projects-title">02 / Our projects</h2>
-          <div className="project-list">
+          <h2 id="projects-title">02 / In-house projects</h2>
+          <div className="section-content">
+            <p className="project-intro">Created and maintained by the foundation.</p>
+            <div className="project-list">
             {projects.map((project) => (
               <a className="project" href={project.href} key={project.name}>
                 <img src={project.image} alt="" width="100" height="100" />
                 <span>{project.name}<span className="arrow" aria-hidden="true">↗</span></span>
               </a>
             ))}
+            </div>
           </div>
         </section>
         <section className="section contact" aria-labelledby="contact-title">
           <h2 id="contact-title">03 / Get in touch</h2>
           <div className="section-content">
-            <p className="placeholder-label">Placeholder · contact</p>
-            <p>Contact details coming soon.</p>
+            <p>For funding requests or questions, get in touch.</p>
+            <p className="contact-email"><a href="mailto:kyle@evanko.co">kyle@evanko.co<span className="arrow" aria-hidden="true">↗</span></a></p>
           </div>
         </section>
       </main>
