@@ -11,7 +11,7 @@ export default function Home() {
       <main>
         <section className="mission" aria-labelledby="mission-title">
           <h1 id="mission-title">Knowledge<br />is power<span className="accent">.</span></h1>
-          <p>The Evanko Foundation is a 501(c)(3) nonprofit dedicated to education.</p>
+          <p>The Evanko Foundation is a 501(c)(3) nonprofit dedicated to the next generation of leaders, learners, and entrepreneurs.</p>
         </section>
         <section className="section" aria-labelledby="projects-title">
           <h2 id="projects-title">1 / In-house projects</h2>
