@@ -10,13 +10,13 @@ export default function Home() {
       <header className="masthead">The Evanko Foundation</header>
       <main>
         <section className="mission" aria-labelledby="mission-title">
-          <h1 id="mission-title">Knowledge<br />is power<span className="accent">.</span></h1>
-          <p>The Evanko Foundation is a 501(c)(3) nonprofit dedicated to making information easier to access, organize, share, and use for the next generation of entrepreneurs.</p>
+          <h1 id="mission-title">Access changes<br />everything<span className="accent">.</span></h1>
+          <p>The Evanko Foundation is a 501(c)(3) nonprofit dedicated to expanding access to information and supporting the next generation of entrepreneurs.</p>
         </section>
         <section className="section" aria-labelledby="projects-title">
           <h2 id="projects-title">1 / In-house projects</h2>
           <div className="section-content">
-            <p className="project-intro">Created and maintained by the foundation.</p>
+            <p className="project-intro">Created and maintained by the foundation. Gardenish organizes plant information. FlashFluent supports clearer foreign-language communication in business.</p>
             <div className="project-list">
             {projects.map((project) => (
               <a className="project" href={project.href} key={project.name}>
@@ -30,8 +30,8 @@ export default function Home() {
         <section className="section" aria-labelledby="funding-title">
           <h2 id="funding-title">2 / What we fund</h2>
           <div className="section-content">
-            <p>We support projects that make data easier to share, information easier to access, and practical knowledge more useful.</p>
-            <p className="funding-request">We accept funding requests for projects that expand access to information or support the next generation of leaders and entrepreneurs.</p>
+            <p>We support projects that make data easier to share and information easier to access, organize, and use.</p>
+            <p className="funding-request">We accept funding requests for projects that expand access to information or support the next generation of entrepreneurs and small business owners.</p>
           </div>
         </section>
         <section className="section contact" aria-labelledby="contact-title">
