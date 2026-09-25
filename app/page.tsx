@@ -1,7 +1,7 @@
 /* eslint-disable next/no-img-element -- Static export uses local images without an image server. */
 const projects = [
-  { name: 'Gardenish', href: 'https://gardenish.co', image: '/gardenishlogo.png' },
-  { name: 'FlashFluent', href: 'https://flashfluent.app', image: '/FlashFluentLogo.jpg' },
+  { name: 'FlashFluent', href: 'https://flashfluent.app/', image: '/project-previews/flashfluent-home.png', alt: 'FlashFluent homepage preview' },
+  { name: 'Gardenish', href: 'https://gardenish.co/', image: '/project-previews/gardenish-home.png', alt: 'Gardenish homepage preview' },
 ];
 
 export default function Home() {
@@ -13,18 +13,18 @@ export default function Home() {
           <h1 id="mission-title">Access changes<br />everything<span className="accent">.</span></h1>
           <p>The Evanko Foundation is a 501(c)(3) nonprofit dedicated to expanding access to information and supporting the next generation of entrepreneurs.</p>
         </section>
-        <section className="section" aria-labelledby="projects-title">
-          <h2 id="projects-title">1 / In-house projects</h2>
-          <div className="section-content">
+        <section className="section projects" aria-labelledby="projects-title">
+          <div className="section-intro">
+            <h2 id="projects-title">1 / In-house projects</h2>
             <p className="project-intro">Created and maintained by the foundation. Gardenish organizes plant information. FlashFluent supports clearer foreign-language communication in business.</p>
-            <div className="project-list">
+          </div>
+          <div className="project-previews">
             {projects.map((project) => (
-              <a className="project" href={project.href} key={project.name}>
-                <img src={project.image} alt="" width="100" height="100" />
+              <a className="project-preview" href={project.href} key={project.name}>
+                <img src={project.image} alt={project.alt} />
                 <span>{project.name}<span className="arrow" aria-hidden="true">↗</span></span>
               </a>
             ))}
-            </div>
           </div>
         </section>
         <section className="section" aria-labelledby="funding-title">
@@ -42,7 +42,10 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer>© The Evanko Foundation 2026</footer>
+      <footer>
+        <span>© The Evanko Foundation 2026 · EIN 33-2430782</span>
+        <span>24124 Decorah Rd, Diamond Bar, CA 91765</span>
+      </footer>
     </div>
   );
 }
