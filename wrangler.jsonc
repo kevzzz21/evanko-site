@@ -2,6 +2,9 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "evanko-site",
   "compatibility_date": "2026-05-22",
+  "build": {
+    "command": "npm run build"
+  },
   "assets": {
     "directory": "./dist/client",
     "not_found_handling": "single-page-application"
