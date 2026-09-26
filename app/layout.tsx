@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Evanko Foundation',
-  description: 'Free language tools for learning, opportunity, connection, and lifelong mental engagement.',
+  description: 'A 501(c)(3) nonprofit expanding language access for opportunity, connection, and lifelong learning.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

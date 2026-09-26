@@ -6,10 +6,10 @@ const messages = [
   ['Unlocking', 'opportunities'],
   ['Expanding', 'minds'],
   ['Growing', 'careers'],
-  ['Finding', 'voice'],
+  ['Making', 'connections'],
   ['Easing', 'loneliness'],
-  ['Learning', 'early'],
-  ['Reaching', 'clients'],
+  ['Getting', 'a head start'],
+  ['Earning', 'more income'],
   ['Building', 'belonging'],
   ['Connecting', 'generations'],
   ['Starting', 'businesses'],
@@ -23,5 +23,5 @@ export function HeroHeading() {
     return () => window.removeEventListener('evanko-world-change', onWorldChange);
   }, []);
   const [first, second] = messages[index] ?? messages[0];
-  return <h1 className="hero-headline"><span>{first}</span><span>{second} with</span><span>language.</span></h1>;
+  return <h1 className="hero-headline"><span>{first}</span><span>{second}</span><span>with language.</span></h1>;
 }
