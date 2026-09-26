@@ -1,0 +1,2 @@
+import { SiteFooter, SiteHeader } from '../../components/site-chrome';
+export default function GetInvolved(){return <div className="site-page"><SiteHeader/><main className="contact-page shell"><section className="contact-page__box"><p className="eyebrow">Get involved</p><h1>Let’s make<br/>language useful.</h1><p>For questions about the foundation, its projects, or future ways to contribute, get in touch.</p><a className="contact-email" href="mailto:kyle@evanko.co">kyle@evanko.co</a></section></main><SiteFooter/></div>}
