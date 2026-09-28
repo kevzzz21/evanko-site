@@ -75,51 +75,63 @@ const articles: Record<ArticleKey, Article> = {
   },
   longevity: {
     eyebrow: "Longevity",
-    title: "Staying sharp through languages.",
+    title: "Language and cognitive longevity",
     dek: "What research can—and cannot—say about language use later in life.",
     icon: "yellow-planet.json",
     sections: [
       { heading: "A promising association is not a guarantee", paragraphs: ["Studies of bilingualism and aging have found an association with a later average age at which dementia symptoms are diagnosed in some populations. That is an important signal worth studying. It does not mean that learning a language prevents dementia, or that it can replace healthcare, exercise, social support, or other parts of healthy aging.", "The most responsible version of this claim stays with what the evidence supports: sustained language use may be one meaningful form of mental engagement across a life."] },
       { heading: "The research is still being refined", paragraphs: ["A systematic review and meta-analysis found later reported onset or diagnosis in bilingual groups, but not evidence of a lower dementia risk overall. The studies also differ in design, populations, education, immigration history, and how bilingualism is measured.", "That nuance matters. It keeps a hopeful idea from becoming an overpromise."] },
-      { heading: "Engagement is valuable without a guarantee", paragraphs: ["Reading, remembering, speaking, and listening give people a reason to stay curious and in contact with others. Free language tools can support that practice at any age—because a sharper, more connected life is worth investing in even when no single outcome can be promised."] }
+      { heading: "Engagement is valuable without a guarantee", paragraphs: ["Reading, remembering, speaking, and listening give people a reason to stay curious and in contact with others. Free language tools can support that practice at any age—because a sharper, more connected life is worth investing in even when no single outcome can be promised."] },
+      { heading: "Use matters as much as knowledge", paragraphs: ["The studies in this field generally examine people who have used more than one language over long periods of life. That is different from taking a few lessons or memorizing vocabulary for a season. The relevant question is not whether someone can call themselves bilingual; it is whether language remains a lived, demanding practice." ] },
+      { heading: "Learning can be part of a larger life", paragraphs: ["A language course belongs alongside other forms of engagement: reading, movement, relationships, creative work, healthcare, and community life. It is one way to keep encountering something unfamiliar and responding to it. That is a valuable reason to learn at any age." ] },
+      { heading: "The right promise is an invitation", paragraphs: ["The Foundation’s case for adult learners is not a medical promise. It is an invitation to keep learning, speaking, listening, and returning to a skill that connects people with other people. The evidence leaves room for curiosity without turning it into a cure." ] }
     ],
-    sources: [{ label: "Systematic review: Bilingualism and dementia", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7089902/" }]
+    sources: [{ label: "Systematic review and meta-analysis: bilingualism and dementia", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7089902/" }, { label: "Systematic review: bilingualism, cognitive decline, and dementia", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6680432/" }, { label: "Meta-analysis: bilingual advantage by task and age", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7394008/" }]
   },
   early: {
     eyebrow: "Early development",
-    title: "Giving children a head start through language",
+    title: "What early language access makes possible",
     dek: "Why children deserve a genuine chance to learn and communicate across languages.",
     icon: "teal-planet.json",
     sections: [
       { heading: "Childhood is a powerful time to learn", paragraphs: ["Children learn languages through repeated, meaningful contact: stories, play, songs, routines, and conversation. Early access can give a child more ways to participate in family and community life, as well as a foundation for future learning.", "The case for access does not require a miracle claim. Every child deserves tools that make learning feel available rather than exclusive."] },
       { heading: "Cognitive claims deserve care", paragraphs: ["Bilingualism research has reported possible benefits in areas such as executive function, but reviews and meta-analyses also find mixed results. Outcomes depend on context, exposure, socioeconomic conditions, and how studies define bilingual experience.", "That does not diminish language learning. It simply means we should value it for what is certain: communication, cultural access, and a practical skill that grows with use."] },
+      { heading: "Make the classroom understandable", paragraphs: ["UNESCO reports that 40% of people globally do not have access to education in a language they speak and understand fluently. For those learners, language is not an enrichment topic sitting beside school. It is part of whether school is understandable at all." ] },
+      { heading: "A home language is not an obstacle", paragraphs: ["A child does not need to set aside a home language in order to learn another one. UNESCO’s multilingual-education guidance treats languages learners understand as a foundation for learning, with additional languages introduced deliberately and supported over time." ] },
+      { heading: "The cognitive story is more complicated", paragraphs: ["Claims that bilingualism automatically makes children better thinkers have travelled farther than the evidence. Large reviews find effects that are small, variable, and sensitive to how language experience and executive function are measured. The case for language access does not need that claim to be powerful." ] },
       { heading: "Make the first step free", paragraphs: ["When family income, geography, or school resources determine who gets a head start, free tools can help narrow the gap. The aim is to give young learners an inviting first step—not a one-size-fits-all answer."] }
     ],
-    sources: [{ label: "Review: bilingualism and executive function", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7573143/" }, { label: "Meta-analysis of executive-function evidence", href: "https://pubmed.ncbi.nlm.nih.gov/32914991/" }]
+    sources: [{ label: "UNESCO: Languages matter—global guidance on multilingual education", href: "https://www.unesco.org/en/articles/languages-matter-global-guidance-multilingual-education?hub=66678" }, { label: "Meta-analysis: bilingual executive function in children", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8641133/" }, { label: "Meta-analysis: task and age in bilingual executive function", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7394008/" }]
   },
   belonging: {
     eyebrow: "Connection",
-    title: "What language learning gives the brain.",
+    title: "The language of belonging",
     dek: "Why being able to join a conversation changes a place.",
     icon: "green-planet.json",
     sections: [
       { heading: "Belonging starts with being able to take part", paragraphs: ["A neighborhood, school, or workplace can be welcoming in intention and still be hard to enter when a person cannot follow the conversation. Language is one of the quiet conditions that determines whether someone can ask a question, share a joke, or feel at home.", "That does not make language the whole story of belonging. It makes it one practical part of making a community more open."] },
       { heading: "Connection is built through return", paragraphs: ["The first conversation matters. The second and third often matter more. Familiarity grows when people have a reason to keep coming back to one another, even while they are still learning.", "That is why small, recurring exchanges can be more valuable than a one-time transaction."] },
-      { heading: "Make room for the learner", paragraphs: ["A language learner should not have to earn the right to participate. Tools can help, but so can patience, slower speech, and the assumption that effort belongs on both sides of a conversation."] }
+      { heading: "Make room for the learner", paragraphs: ["A language learner should not have to earn the right to participate. Tools can help, but so can patience, slower speech, and the assumption that effort belongs on both sides of a conversation."] },
+      { heading: "Language makes everyday systems usable", paragraphs: ["Belonging is shaped in ordinary places: a parent meeting, a clinic, a bus stop, a staff room, a school form, a customer counter. The ability to understand and answer in those moments changes whether a community feels navigable or closed." ] },
+      { heading: "Proficiency changes participation", paragraphs: ["A study of 2,493 Canadian newcomer-service clients found language proficiency was its strongest predictor of sociocultural integration, even alongside factors such as time in the country and social networks. The study does not reduce belonging to fluency. It shows that language can change the practical conditions for taking part." ] },
+      { heading: "Welcome is shared work", paragraphs: ["The responsibility does not sit with a learner alone. Institutions can translate vital information, make room for interpretation, hire staff who reflect a community, and speak with clarity. A learner’s growing language skill and a community’s willingness to meet them both matter." ] }
     ],
-    sources: [{ label: "WHO Commission on Social Connection report", href: "https://www.who.int/publications/i/item/978240112360" }]
+    sources: [{ label: "WHO: From loneliness to social connection", href: "https://www.who.int/publications/i/item/978240112360" }, { label: "Applied Psycholinguistics: language proficiency and newcomer integration", href: "https://doi.org/10.1017/S0142716420000375" }, { label: "OECD Skills Outlook: bridging language barriers", href: "https://www.oecd.org/en/publications/oecd-skills-outlook-2023_27452f29-en/full-report/component-13.html" }]
   },
   service: {
     eyebrow: "Opportunity",
-    title: "Language is still a career advantage.",
+    title: "What service language really means",
     dek: "The practical phrases that help work feel possible.",
     icon: "earth-like-planet.json",
     sections: [
       { heading: "Work has its own vocabulary", paragraphs: ["In hospitality, customer support, and service work, language is not abstract. It is the ability to welcome someone, clarify a request, explain a delay, and make a problem feel handled.", "These moments can be short, but they carry trust. A worker does not need every word in the dictionary; they need language that fits the work in front of them."] },
       { heading: "Confidence is part of access", paragraphs: ["When people know the phrases they are likely to need, they can focus more on the person than on the fear of getting it wrong. That is a practical kind of confidence—not performance, just readiness."] },
-      { heading: "Start with the moment that matters", paragraphs: ["Job-specific language packs should be built around real interactions. The goal is to make a shift, a client exchange, or a handoff more possible today, while leaving room for deeper learning over time."] }
+      { heading: "Start with the moment that matters", paragraphs: ["Job-specific language packs should be built around real interactions. The goal is to make a shift, a client exchange, or a handoff more possible today, while leaving room for deeper learning over time."] },
+      { heading: "Communication is a work skill", paragraphs: ["The OECD describes language as a facilitator—and a barrier—to the efficient exchange of information and access to work offered in that language. This is especially visible when a role depends on explaining, reassuring, coordinating, or responding in real time." ] },
+      { heading: "Language demand changes by job", paragraphs: ["There is no single vocabulary list for employment. A front-desk worker needs a different set of phrases from a delivery driver, a caregiver, a restaurant server, or a remote support specialist. Good practice starts with the work people actually do, not with an abstract idea of fluency." ] },
+      { heading: "Practice should lead somewhere", paragraphs: ["A useful activity lets a learner recognise a phrase, hear it, retrieve it, and imagine where they will use it. That is why FlashFluent’s illustrated vocabulary is a starting point. Repeated practice becomes more valuable when it is connected to a real interaction ahead." ] }
     ],
-    sources: [{ label: "PLOS ONE: Language skills and labor-market outcomes", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10309611/" }]
+    sources: [{ label: "OECD Skills Outlook: bridging language barriers", href: "https://www.oecd.org/en/publications/oecd-skills-outlook-2023_27452f29-en/full-report/component-13.html" }, { label: "OECD: demand for language skills in the European labour market", href: "https://www.oecd.org/en/publications/the-demand-for-language-skills-in-the-european-labour-market_e1a5abe0-en.html" }, { label: "PLOS ONE: labor-market outcomes of bilinguals in the United States", href: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287711" }]
   },
   freeTools: {
     eyebrow: "Access",
@@ -129,9 +141,12 @@ const articles: Record<ArticleKey, Article> = {
     sections: [
       { heading: "Cost shapes who gets a head start", paragraphs: ["Language learning is often treated as an individual choice, but the choices available to a person are shaped by time, income, school resources, and geography. When the first useful tool is behind a paywall, access begins unevenly.", "Free tools do not remove every barrier. They can make the first step available to more people."] },
       { heading: "Useful beats impressive", paragraphs: ["A public-interest tool should be clear, usable, and light enough to return to. It does not need to claim it can teach everything. It needs to help someone take the next real step."] },
-      { heading: "Access is a design decision", paragraphs: ["The Foundation’s approach is simple: make practical language support free wherever possible, and build for the person who may not have another easy way in."] }
+      { heading: "Access is a design decision", paragraphs: ["The Foundation’s approach is simple: make practical language support free wherever possible, and build for the person who may not have another easy way in."] },
+      { heading: "Time is a cost, too", paragraphs: ["A course can be free and still be inaccessible if it only works at a fixed hour, requires a reliable commute, or assumes long uninterrupted study sessions. OECD data identifies scheduling conflicts as the most common barrier for adults who want training but do not take part. Flexible practice matters because life is already full." ] },
+      { heading: "Cost closes doors early", paragraphs: ["Across the OECD and accession countries in the EU Adult Education Survey, around one-third of adults who wanted education or training but did not participate cited cost. Removing a subscription fee does not remove every barrier, but it changes the first decision: whether someone can begin at all." ] },
+      { heading: "Free still has to be good", paragraphs: ["Free should not mean cluttered, extractive, or careless. A public-interest learning tool needs clear language, an understandable interface, content people can return to, and enough care in the details that it respects the learner’s time." ] }
     ],
-    sources: [{ label: "WHO Commission on Social Connection report", href: "https://www.who.int/publications/i/item/978240112360" }]
+    sources: [{ label: "OECD: adult participation in education and training", href: "https://www.oecd.org/en/publications/education-at-a-glance-2024_c00cad36-en/full-report/to-what-extent-do-adults-participate-in-education-and-training_c2f90a06.html" }, { label: "OECD: Trends in adult learning", href: "https://www.oecd.org/en/publications/trends-in-adult-learning_ec0624a6-en.html" }, { label: "UNESCO: Languages matter—multilingual education guidance", href: "https://www.unesco.org/en/articles/languages-matter-global-guidance-multilingual-education?hub=66678" }]
   },
   practice: {
     eyebrow: "Connection",
@@ -141,9 +156,12 @@ const articles: Record<ArticleKey, Article> = {
     sections: [
       { heading: "Practice gives people a reason to return", paragraphs: ["A language exchange is a modest format with a meaningful premise: two people show up, try, listen, and come back. The shared task reduces the pressure of starting from nothing.", "Over time, vocabulary can grow alongside recognition, trust, and curiosity about another person’s life."] },
       { heading: "Safety and structure matter", paragraphs: ["Connection programs need clear expectations, appropriate safeguards, and a format that respects participants. The point is not to manufacture friendship. It is to make respectful contact more possible."] },
-      { heading: "A small answer to a large problem", paragraphs: ["Loneliness is a global public-health concern with many causes. A regular conversation is not a complete solution, but it can be one human-scale way to create contact where there might otherwise be none."] }
+      { heading: "A small answer to a large problem", paragraphs: ["Loneliness is a global public-health concern with many causes. A regular conversation is not a complete solution, but it can be one human-scale way to create contact where there might otherwise be none."] },
+      { heading: "Structure gives people a way in", paragraphs: ["A shared task can make contact less intimidating. Instead of asking strangers to invent a relationship on demand, a language exchange gives each person something to bring: a word, a question, a correction, a story, and a reason to meet again." ] },
+      { heading: "Good intentions need safeguards", paragraphs: ["Programs that bring people together should be designed with boundaries, consent, accessibility, and participant safety in mind. The work is not simply to put people in a room or on a call; it is to make the setting respectful enough that people can return." ] },
+      { heading: "Repetition is the point", paragraphs: ["The evidence on loneliness interventions is uneven, but reviews identify group activities and interpersonal approaches as active areas of study. That fits a simple observation: connection is rarely made in one perfect conversation. It is built when people have a reason to come back." ] }
     ],
-    sources: [{ label: "WHO Commission on Social Connection report", href: "https://www.who.int/publications/i/item/978240112360" }]
+    sources: [{ label: "WHO: From loneliness to social connection", href: "https://www.who.int/publications/i/item/978240112360" }, { label: "Campbell systematic review: in-person interventions for loneliness", href: "https://doi.org/10.1002/cl2.1408" }, { label: "Applied Psycholinguistics: language proficiency and newcomer integration", href: "https://doi.org/10.1017/S0142716420000375" }]
   }
 };
 
@@ -168,7 +186,7 @@ export function ArticlePage({ article }: { article: ArticleKey }) {
     <div className="content-shell article-hero">
       <Link href="/articles" className="text-link">← All articles</Link>
       <div className="article-page__hero-grid">
-        <div><p className="eyebrow">{item.eyebrow}</p><h1>{item.title}</h1><p className="article-dek">{item.dek}</p></div>
+        <div><p className="eyebrow">{item.eyebrow}</p><h1>{item.title}</h1><p className="article-dek">{item.dek}</p><p className="article-byline">Evanko Foundation · Updated September 2026</p></div>
         <div className="article-page__art"><AnimatedIcon path={item.icon} /></div>
       </div>
     </div>
