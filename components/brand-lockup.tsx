@@ -38,7 +38,7 @@ export function BrandLockup({ controlsTheme = false }: { controlsTheme?: boolean
       layer.style.setProperty('--world-planet-scale', String(world.scale));
       layer.style.setProperty('--world-planet-offset-x', `${world.offsetX}px`);
       layer.style.setProperty('--world-planet-offset-y', `${world.offsetY}px`);
-      host.current.append(layer);
+      host.current.appendChild(layer);
       const animation = window.lottie.loadAnimation({ container: layer, renderer: 'svg', loop: true, autoplay: true, path: `/flashfluent-assets/lottie/${world.planet}` });
       active = { layer, animation };
       requestAnimationFrame(() => layer.classList.add('is-visible'));
@@ -47,7 +47,7 @@ export function BrandLockup({ controlsTheme = false }: { controlsTheme?: boolean
     const applyWorld = () => { const world = worlds[index]; if (controlsTheme) { applyTheme(world); window.dispatchEvent(new CustomEvent('evanko-world-change', { detail: index })); } mountPlanet(world); };
     const start = () => { applyWorld(); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = window.setInterval(() => { index = (index + 1) % worlds.length; applyWorld(); }, 3400); };
     const existing = document.querySelector<HTMLScriptElement>('script[data-ff-lottie]');
-    if (window.lottie) start(); else if (existing) existing.addEventListener('load', start, { once: true }); else { const script = document.createElement('script'); script.src = '/flashfluent-assets/lottie/lottie.min.js'; script.dataset.ffLottie = 'true'; script.addEventListener('load', start, { once: true }); document.head.append(script); }
+    if (window.lottie) start(); else if (existing) existing.addEventListener('load', start, { once: true }); else { const script = document.createElement('script'); script.src = '/flashfluent-assets/lottie/lottie.min.js'; script.dataset.ffLottie = 'true'; script.addEventListener('load', start, { once: true }); document.head.appendChild(script); }
     return () => { if (timer) window.clearInterval(timer); active?.animation.destroy(); };
   }, []);
   return <a className="site-brand" href="/"><span className="brand-orbit" aria-hidden="true"><span ref={host} className="brand-planet" /></span>Evanko Foundation</a>;

@@ -92,7 +92,7 @@ const articles: Record<ArticleKey, Article> = {
     eyebrow: "Early development",
     title: "What early language access makes possible",
     dek: "Why children deserve a genuine chance to learn and communicate across languages.",
-    icon: "teal-planet.json",
+    icon: "blue-teal-planet.json",
     sections: [
       { heading: "Childhood is a powerful time to learn", paragraphs: ["Children learn languages through repeated, meaningful contact: stories, play, songs, routines, and conversation. Early access can give a child more ways to participate in family and community life, as well as a foundation for future learning.", "The case for access does not require a miracle claim. Every child deserves tools that make learning feel available rather than exclusive."] },
       { heading: "Cognitive claims deserve care", paragraphs: ["Bilingualism research has reported possible benefits in areas such as executive function, but reviews and meta-analyses also find mixed results. Outcomes depend on context, exposure, socioeconomic conditions, and how studies define bilingual experience.", "That does not diminish language learning. It simply means we should value it for what is certain: communication, cultural access, and a practical skill that grows with use."] },

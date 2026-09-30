@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://evanko.co'),
   title: 'Evanko Foundation',
   description: 'A 501(c)(3) nonprofit expanding language access for opportunity, connection, and lifelong learning.',
 };
