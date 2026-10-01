@@ -20,7 +20,7 @@ const actions = [
 
 export default function Mission() {
   return <div className="site-page">
-    <SiteHeader />
+    <SiteHeader currentPath="/mission" />
     <main className="mission-page">
       <section className="shell mission__hero">
         <div className="mission__hero-copy">
@@ -40,8 +40,8 @@ export default function Mission() {
         <div className="mission__action-intro"><p className="eyebrow">Our mission in practice</p><h2>Access becomes real when there is a place to learn.</h2><p>FlashFluent puts our mission into practice. We have {foundation.students} active students across three classes in San Gabriel Valley school districts, with wider classroom access at the heart of the work ahead.</p><p>The Foundation is a 501(c)(3) nonprofit. Our purpose guides both the tools we build and the support we seek: keep learning free, make it useful, and bring it to more people.</p><a className="text-link" href="/impact">See our classroom impact <span>→</span></a></div>
         <div className="about__commitments-list">{actions.map(([title, copy], index) => <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
       </div></section>
-      <section className="shell mission__invitation"><p className="eyebrow">Be part of the mission</p><h2>Help more people find a place to begin.</h2><p>Your time and knowledge can help a learner practice, a course become more accurate, or a teacher bring language learning into the classroom. Financial support helps keep the tools running and makes room for more languages and wider access.</p><div className="button-row"><a className="button button--primary button--cycle" href="/get-involved">Give your time & skills</a><a className="text-link" href="/donate">Support the Foundation <span>→</span></a></div><p className="mission__contact">For general inquiries: <a href={'mailto:' + foundation.email}>{foundation.email}</a>. <a href="/about">Learn more about the Foundation</a>.</p></section>
+      <section className="shell mission__invitation"><p className="eyebrow">Be part of the mission</p><h2>Help more people find a place to begin.</h2><p>Your time and knowledge can help a learner practice, a course become more accurate, or a teacher bring language learning into the classroom. Financial support helps keep the tools running and makes room for more languages and wider access.</p><div className="button-row"><a className="button button--primary button--cycle" href="/get-involved">Get involved</a><a className="button button--outline" href="/donate">Donate</a></div><p className="mission__contact">For general inquiries: <a href={'mailto:' + foundation.email}>{foundation.email}</a>. <a href="/about">Learn more about the Foundation</a>.</p></section>
     </main>
-    <SiteFooter />
+    <SiteFooter currentPath="/mission" />
   </div>;
 }

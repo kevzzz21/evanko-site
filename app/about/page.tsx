@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: 'About the Foundation | Evanko Founda
 
 export default function About() {
   return <div className="site-page">
-    <SiteHeader />
+    <SiteHeader currentPath="/about" />
     <main className="about">
       <section className="about__hero shell"><h1>Enriching lives,<br />one word at a time.</h1></section>
       <section className="shell about__mission"><p>The Evanko Foundation is a 501(c)(3) nonprofit dedicated to expanding access to language learning. We create, fund, and maintain free tools so more people can learn, communicate, and take part in the world around them.</p><p>Our language-learning software, FlashFluent, offers illustrated vocabulary and practical ways to study, match, and listen. We have 106 active students across three classes in San Gabriel Valley school districts. Our next priority is to make that access available to more teachers, schools, and learners.</p><p>While technology increasingly makes translation easier and more accessible, we reaffirm our belief in the economic importance of learning a language. The service, travel and hospitality industries depend on people who can communicate with customers, coworkers and communities every day, without technological friction.</p><p>And if technology eventually replaces the need for fluency at work, learning a language will still matter. The research is clear: it benefits our cognitive health, keeps the mind engaged, and gives us a deeper way to connect with family, other cultures, and the world around us. That is something no amount of artificial intelligence will ever change.</p></section>
@@ -17,6 +17,6 @@ export default function About() {
       <FoundationBeliefs />
       <LanguagePillars />
     </main>
-    <SiteFooter />
+    <SiteFooter currentPath="/about" />
   </div>;
 }

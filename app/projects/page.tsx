@@ -1,6 +1,6 @@
 /* eslint-disable next/no-img-element -- self-hosted optimized assets in a static export without an image optimizer. */
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '../../components/site-link';
 import { AnimatedIcon } from '../../components/animated-icon';
 import { LanguageScroller } from '../../components/language-scroller';
 import { SiteFooter, SiteHeader } from '../../components/site-chrome';
@@ -52,7 +52,7 @@ const questions = [
 
 export default function Projects() {
   return <div className="site-page">
-    <SiteHeader />
+    <SiteHeader currentPath="/projects" />
     <main className="flashfluent-page">
       <section className="flash-hero shell">
         <div>
@@ -83,7 +83,7 @@ export default function Projects() {
       </div></section>
 
       <section className="flashfluent__feature shell" aria-labelledby="illustrations-heading">
-        <div className="flashfluent__photo"><img src="/images/flashfluent-practice.webp" srcSet="/images/flashfluent-practice-640.webp 640w, /images/flashfluent-practice.webp 1046w" sizes="(max-width: 760px) calc(100vw - 28px), (max-width: 1200px) 45vw, 530px" alt="A learner practicing Mandarin vocabulary with illustrated color cards in FlashFluent" width="1046" height="696" loading="lazy" decoding="async" /></div>
+        <div className="flashfluent__photo"><img src="/images/flashfluent-practice-1046.webp" srcSet="/images/flashfluent-practice-320.webp 320w, /images/flashfluent-practice-480.webp 480w, /images/flashfluent-practice-640.webp 640w, /images/flashfluent-practice-800.webp 800w, /images/flashfluent-practice-1046.webp 1046w" sizes="(max-width: 760px) calc(100vw - 28px), (max-width: 1200px) 45vw, 530px" alt="A learner practicing Mandarin vocabulary with illustrated color cards in FlashFluent" width="1046" height="696" loading="lazy" decoding="async" /></div>
         <div><p className="eyebrow">Pictures, pronunciation, and reading support</p><h2 id="illustrations-heading">More ways to<br />meet a word.</h2><p>An illustration gives you something concrete to connect with a new word. Audio adds its pronunciation. The written term and English meaning help you check the connection as you learn.</p><p>Make the cards work for you: adjust the picture, meaning, and reading hints instead of using the same setup forever. Keep a reading guide visible while you are getting started, then try practicing with fewer hints.</p><p>Mandarin offers pinyin and simplified or traditional characters. Japanese and Korean include reading support alongside their scripts, so unfamiliar writing does not have to stop you from beginning.</p><a className="text-link" href="#courses">Find your course <span aria-hidden="true">→</span></a></div>
       </section>
 
@@ -108,9 +108,9 @@ export default function Projects() {
       <section className="projects__future shell" aria-labelledby="projects-future-heading">
         <div className="projects__next"><p className="eyebrow">The work ahead</p><h2 id="projects-future-heading">More languages.<br />More ways to learn.</h2><p>We are building toward ten live language courses and wider access. Volunteers can help onboard teachers and schools, review language content, offer tutoring support, and create custom curriculum aligned with school lessons.</p></div>
         <div className="project-grid">{projects.map(([title, icon, copy]) => <article className="project-card" key={title}><AnimatedIcon path={icon} className="project-card__icon" /><h3>{title}</h3><p>{copy}</p><span className="status">Next focus</span></article>)}</div>
-        <div className="projects__involved"><p className="eyebrow">Help expand access</p><h2>Help bring free practice to more learners.</h2><p>Offer tutoring or language review, help onboard a school, or contribute curriculum experience. Donations help cover servers, hosting, development, language expansion, and, most importantly, wider access.</p><div className="button-row"><Link href="/get-involved" className="button button--primary">Get involved</Link><Link href="/donate" className="text-link">Support the foundation <span aria-hidden="true">→</span></Link></div></div>
+        <div className="projects__involved"><p className="eyebrow">Help expand access</p><h2>Help bring free practice to more learners.</h2><p>Offer tutoring or language review, help onboard a school, or contribute curriculum experience. Donations help cover servers, hosting, development, language expansion, and, most importantly, wider access.</p><div className="button-row"><Link href="/get-involved" className="button button--primary">Get involved</Link><Link href="/donate" className="button button--outline">Donate</Link></div></div>
       </section>
     </main>
-    <SiteFooter />
+    <SiteFooter currentPath="/projects" />
   </div>;
 }

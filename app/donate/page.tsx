@@ -6,17 +6,17 @@ import { foundation } from '../../lib/foundation';
 export const metadata: Metadata = { title: 'Donate & support free learning | Evanko Foundation', description: 'Support servers, hosting, development, language expansion, and wider access to FlashFluent. Give your time through tutoring and language review.', alternates: { canonical: '/donate' } };
 
 export default function Donate() {
-  return <div className="site-page"><SiteHeader /><main className="involved support-page donate-page">
+  return <div className="site-page"><SiteHeader currentPath="/donate" /><main className="involved support-page donate-page">
     <section className="shell support-panel">
       <div className="support-panel__copy">
-        <p className="eyebrow">The most valuable way to give</p>
-        <h1>Give your time. Share what you know.</h1>
-        <p>Tutoring and language review are the most valuable ways to support our mission. Your knowledge can help learners practice and help us make language content more useful and accurate.</p>
-        <p>We are also seeking volunteers to onboard teachers and schools to FlashFluent and create custom curriculum that matches what they are teaching.</p>
-        <div className="button-row"><a className="button button--primary" href="/get-involved">Explore volunteer roles</a><a className="text-link" href="#make-a-gift">Make a donation <span>→</span></a></div>
+        <p className="eyebrow">Donate to expand access</p>
+        <h1>Help keep language learning free.</h1>
+        <p>Your gift helps cover servers, hosting, software development, and language expansion so more people have a free place to learn.</p>
+        <p>Help bring FlashFluent to more teachers, schools, and learners. You can also support the mission by sharing your time and skills.</p>
+        <div className="button-row"><a className="button button--red" href="#make-a-gift">Make a donation</a><a className="text-link" href="/get-involved">Explore volunteer roles <span>→</span></a></div>
       </div>
       <figure className="support-photo">
-        <img src="/images/flashfluent-practice.webp" srcSet="/images/flashfluent-practice-640.webp 640w, /images/flashfluent-practice.webp 1046w" sizes="(max-width: 588px) calc(100vw - 76px), (max-width: 760px) 512px, (max-width: 1200px) calc((100vw - 160px) / 2.15), 484px" width={1046} height={696} loading="eager" fetchPriority="high" decoding="async" alt="A learner practicing Mandarin vocabulary with FlashFluent on a laptop." />
+        <img src="/images/flashfluent-practice-1046.webp" srcSet="/images/flashfluent-practice-320.webp 320w, /images/flashfluent-practice-480.webp 480w, /images/flashfluent-practice-640.webp 640w, /images/flashfluent-practice-800.webp 800w, /images/flashfluent-practice-1046.webp 1046w" sizes="(max-width: 588px) calc(100vw - 76px), (max-width: 760px) 512px, (max-width: 1200px) calc((100vw - 160px) / 2.15), 484px" width={1046} height={696} loading="eager" fetchPriority="high" decoding="async" alt="A learner practicing Mandarin vocabulary with FlashFluent on a laptop." />
         <figcaption>A place to practice, one word at a time.</figcaption>
       </figure>
     </section>
@@ -27,7 +27,8 @@ export default function Donate() {
       <p className="eyebrow">Why it matters</p><h2>Language should make life bigger.</h2>
       <p>A new language can make room for a conversation, a relationship, or an opportunity that once felt out of reach. The ability to learn should be available wherever someone starts.</p>
       <p>We create, fund, and maintain free language-learning tools because cost and geography should not decide who gets the chance to begin. We have 106 active students across three classes in San Gabriel Valley school districts, and access expansion is at the heart of the work ahead.</p>
+      <div className="button-row support-note__actions"><a className="button button--red" href="#make-a-gift">Make a donation</a><a className="button button--outline" href="/get-involved">Get involved</a></div>
       <p>Read <a href="/about">about our mission</a> or explore <a href="/get-involved">ways to volunteer</a>. For general inquiries: <a href={'mailto:' + foundation.email}>{foundation.email}</a>.</p>
     </section>
-  </main><SiteFooter /></div>;
+  </main><SiteFooter currentPath="/donate" /></div>;
 }

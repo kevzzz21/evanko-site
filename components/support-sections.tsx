@@ -25,7 +25,7 @@ export function DonationSection() {
       <p>{paymentLink ? 'Help keep FlashFluent free, expand language support, and bring learning to more teachers, schools, and students.' : 'Contact us about making a gift. Our online donation option will be added here when it is available.'}</p>
       {paymentLink && <div className="donate-payments"><img src="/images/paypal-and-card-logos.png" width={316} height={40} alt="PayPal, Mastercard, Visa, Discover, and American Express" /><p>Give with PayPal or a major debit or credit card through PayPal checkout.</p></div>}
       <div className="donate-gift__actions">
-        {paymentLink ? <a className="button button--red" href={paymentLink} target="_blank" rel="noopener noreferrer">Donate with PayPal <span aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span></a> : <a className="button button--red" href={'mailto:' + foundation.contacts.donations + '?subject=Supporting%20the%20Evanko%20Foundation'}>Discuss a donation</a>}
+        {paymentLink ? <a className="button button--red" href={paymentLink} target="_blank" rel="noopener noreferrer">Donate with PayPal <span aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span></a> : <a className="button button--red" href={'mailto:' + foundation.contacts.donations + '?subject=Supporting%20the%20Evanko%20Foundation'}>Email us about a donation</a>}
       </div>
       <p className="donate-gift__questions">Questions about giving? <a className="donate-gift__email" href={'mailto:' + foundation.contacts.donations}>{foundation.contacts.donations}</a></p>
       <p className="donate-gift__organization"><strong>The Evanko Foundation</strong> · 501(c)(3) nonprofit<br />EIN {foundation.ein}</p>

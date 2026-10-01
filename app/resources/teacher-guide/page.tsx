@@ -16,8 +16,8 @@ const sections = [
 ];
 
 export default function TeacherGuide() {
-  return <div className="site-page"><SiteHeader /><main className="article-page">
+  return <div className="site-page"><SiteHeader currentPath="/resources/teacher-guide" /><main className="article-page">
     <div className="content-shell article-hero"><a className="text-link" href="/articles">← All resources</a><div className="article-page__hero-grid"><div><p className="eyebrow">For teachers · Suggested activity</p><h1>A 15-minute vocabulary routine.</h1><p className="article-dek">A few terms, several ways to practice, and a useful exit check. Adapt the routine to your students.</p><p className="article-byline">Evanko Foundation · September 2026</p></div><div className="article-page__art"><AnimatedIcon path="teamwork.json" /></div></div></div>
-    <div className="content-shell article-layout"><ReadingProgress sections={sections.map(section => [section.id, section.heading] as [string, string])} /><article className="article-body" id="article-body">{sections.map((section, index) => <section id={section.id} key={section.id}><h2><span>0{index + 1}</span>{section.heading}</h2>{section.paragraphs.map(p => <p key={p}>{p}</p>)}</section>)}<aside className="article-source"><strong>Try it or share feedback</strong><p><a href={foundation.learningUrl}>Open FlashFluent</a> · <a href={'mailto:' + foundation.contacts.teachers + '?subject=Teacher%20guide%20feedback'}>Contact our teacher team</a></p></aside></article></div>
-  </main><SiteFooter /></div>;
+    <div className="content-shell article-layout"><ReadingProgress sections={sections.map(section => [section.id, section.heading] as [string, string])} /><article className="article-body" id="article-body">{sections.map((section, index) => <section id={section.id} key={section.id}><h2><span>0{index + 1}</span>{section.heading}</h2>{section.paragraphs.map(p => <p key={p}>{p}</p>)}</section>)}<aside className="article-source"><strong>Try it or share feedback</strong><p><a href={foundation.learningUrl}>Open FlashFluent</a> · <a href={'mailto:' + foundation.contacts.teachers + '?subject=Teacher%20guide%20feedback'}>Email our teacher team</a></p></aside></article></div>
+  </main><SiteFooter currentPath="/resources/teacher-guide" /></div>;
 }

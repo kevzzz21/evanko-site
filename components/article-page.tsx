@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "./site-link";
 import { ReadingProgress } from "./article-reader";
 import { AnimatedIcon } from "./animated-icon";
 import { SiteFooter, SiteHeader } from "./site-chrome";
@@ -182,7 +182,7 @@ export function ArticlePage({ article }: { article: ArticleKey }) {
   const item = articles[article];
   const related = (Object.keys(articles) as ArticleKey[]).filter((key) => key !== article);
   const sectionIds = item.sections.map((_, index) => `section-${index + 1}`);
-  return <div className="site-page"><SiteHeader /><main className="article-page">
+  return <div className="site-page"><SiteHeader currentPath={articlePaths[article]} /><main className="article-page">
     <div className="content-shell article-hero">
       <Link href="/articles" className="text-link">← All articles</Link>
       <div className="article-page__hero-grid">
@@ -202,5 +202,5 @@ export function ArticlePage({ article }: { article: ArticleKey }) {
     </div>
   </main>
   <section className="related-articles"><div className="shell"><div className="related-articles__heading"><p className="eyebrow">Keep reading</p><h2>More from the foundation.</h2></div><div className="home-articles__grid">{related.map((key, index) => { const relatedItem = articles[key]; return <a className={`home-article-card home-article-card--${relatedTones[index]}`} href={articlePaths[key]} key={key}><div className="home-article-card__art"><AnimatedIcon path={relatedItem.icon} /></div><div className="home-article-card__copy"><p className="eyebrow">{relatedItem.eyebrow}</p><h3>{relatedItem.title}</h3><p>{relatedItem.dek}</p><span>Read article <b>→</b></span></div></a>; })}</div></div></section>
-  <SiteFooter /></div>;
+  <SiteFooter currentPath={articlePaths[article]} /></div>;
 }
