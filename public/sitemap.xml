@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://evanko.co/</loc></url>
+  <url><loc>https://evanko.co/</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://evanko.co/about</loc></url>
   <url><loc>https://evanko.co/mission</loc></url>
   <url><loc>https://evanko.co/projects</loc></url>
   <url><loc>https://evanko.co/impact</loc></url>
-  <url><loc>https://evanko.co/articles</loc></url>
+  <url><loc>https://evanko.co/articles</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://evanko.co/resources/teacher-guide</loc></url>
   <url><loc>https://evanko.co/get-involved</loc></url>
   <url><loc>https://evanko.co/contact</loc></url>
@@ -19,4 +19,8 @@
   <url><loc>https://evanko.co/articles/service-language</loc></url>
   <url><loc>https://evanko.co/articles/why-free-tools</loc></url>
   <url><loc>https://evanko.co/articles/connection-needs-practice</loc></url>
+  <url>
+    <loc>https://evanko.co/articles/october-2026-newsletter</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
 </urlset>

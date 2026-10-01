@@ -2,8 +2,9 @@ import Link from "./site-link";
 import { ReadingProgress } from "./article-reader";
 import { AnimatedIcon } from "./animated-icon";
 import { SiteFooter, SiteHeader } from "./site-chrome";
+import { octoberNewsletter } from "../lib/october-newsletter";
 
-type ArticleKey = "economics" | "freelance" | "connection" | "longevity" | "early" | "belonging" | "service" | "freeTools" | "practice";
+type ArticleKey = "economics" | "freelance" | "connection" | "longevity" | "early" | "belonging" | "service" | "freeTools" | "practice" | "octoberNewsletter";
 
 type Source = { label: string; href: string };
 type Article = {
@@ -13,9 +14,12 @@ type Article = {
   icon: string;
   sections: { heading: string; paragraphs: string[] }[];
   sources: Source[];
+  published?: { iso: string; label: string };
+  actions?: { href: string; label: string }[];
 };
 
 const articles: Record<ArticleKey, Article> = {
+  octoberNewsletter,
   economics: {
     eyebrow: "Opportunity",
     title: "The economics of bilingualism",
@@ -166,6 +170,7 @@ const articles: Record<ArticleKey, Article> = {
 };
 
 const articlePaths: Record<ArticleKey, string> = {
+  octoberNewsletter: octoberNewsletter.path,
   economics: "/articles/economics-of-bilingualism",
   freelance: "/articles/language-and-global-work",
   connection: "/articles/translation-and-connection",
@@ -180,13 +185,13 @@ const relatedTones = ["blue", "orange", "purple", "gold", "green", "earth", "tea
 
 export function ArticlePage({ article }: { article: ArticleKey }) {
   const item = articles[article];
-  const related = (Object.keys(articles) as ArticleKey[]).filter((key) => key !== article);
+  const related = (Object.keys(articles) as ArticleKey[]).filter((key) => key !== article).slice(0, 8);
   const sectionIds = item.sections.map((_, index) => `section-${index + 1}`);
   return <div className="site-page"><SiteHeader currentPath={articlePaths[article]} /><main className="article-page">
     <div className="content-shell article-hero">
       <Link href="/articles" className="text-link">← All articles</Link>
       <div className="article-page__hero-grid">
-        <div><p className="eyebrow">{item.eyebrow}</p><h1>{item.title}</h1><p className="article-dek">{item.dek}</p><p className="article-byline">Evanko Foundation · Updated September 2026</p></div>
+        <div><p className="eyebrow">{item.eyebrow}</p><h1>{item.title}</h1><p className="article-dek">{item.dek}</p><p className="article-byline">Evanko Foundation · {item.published ? <>Published <time dateTime={item.published.iso}>{item.published.label}</time></> : 'Updated September 2026'}</p></div>
         <div className="article-page__art"><AnimatedIcon path={item.icon} /></div>
       </div>
     </div>
@@ -197,7 +202,8 @@ export function ArticlePage({ article }: { article: ArticleKey }) {
           <h2><span>0{index + 1}</span>{section.heading}</h2>
           {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </section>)}
-        <aside className="article-source"><strong>Sources</strong><ul>{item.sources.map((source) => <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ul></aside>
+        {item.sources.length > 0 && <aside className="article-source"><strong>Sources</strong><ul>{item.sources.map((source) => <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ul></aside>}
+        {item.actions && <div className="button-row newsletter-article-actions">{item.actions.map((action, index) => <Link key={action.href} href={action.href} className={`button ${index === 0 ? 'button--primary' : action.href === '/donate' ? 'button--red' : 'button--outline'}`}>{action.label}</Link>)}</div>}
       </article>
     </div>
   </main>
