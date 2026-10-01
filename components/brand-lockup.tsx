@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-import { afterPaintIdle, loadAnimationData, loadLottie, type LottieAnimation } from '../lib/lottie-runtime';
+import { afterPaintIdle, loadAnimationData, loadLottie, queueAnimationSetup, type LottieAnimation } from '../lib/lottie-runtime';
 
 type World = { background: string; foreground: string; shadow: string; highlight: string; planet: string; scale: number; offsetX: number; offsetY: number };
 
@@ -30,6 +30,7 @@ export function BrandLockup({ controlsTheme = false }: { controlsTheme?: boolean
     let index = Number(document.documentElement.dataset.worldIndex ?? 0);
     let timer: number | undefined;
     let cancelIdle: (() => void) | undefined;
+    let cancelSetup: (() => void) | undefined;
     let generation = 0;
     let active: { index: number; layer: HTMLSpanElement; animation: LottieAnimation } | undefined;
     const retiring = new Map<LottieAnimation, { layer: HTMLSpanElement; timer: number }>();
@@ -51,6 +52,10 @@ export function BrandLockup({ controlsTheme = false }: { controlsTheme?: boolean
       try {
         const [player, animationData] = await Promise.all([loadLottie(), loadAnimationData(world.planet)]);
         if (disposed || request !== generation || !nearby || document.hidden) return;
+        const setup = queueAnimationSetup();
+        cancelSetup = setup.cancel;
+        if (!await setup.ready || disposed || request !== generation || !nearby || document.hidden) return;
+        cancelSetup = undefined;
         const layer = document.createElement('span');
         layer.className = 'brand-planet__layer';
         layer.style.setProperty('--world-planet-scale', String(world.scale));
@@ -85,6 +90,9 @@ export function BrandLockup({ controlsTheme = false }: { controlsTheme?: boolean
     };
     const queuePlanet = () => {
       cancelIdle?.();
+      cancelSetup?.();
+      cancelSetup = undefined;
+      ++generation;
       cancelIdle = afterPaintIdle(() => { void mountPlanet(); });
     };
     const applyWorld = () => {
@@ -108,7 +116,7 @@ export function BrandLockup({ controlsTheme = false }: { controlsTheme?: boolean
       timer = undefined;
     };
     const onVisibility = () => {
-      if (document.hidden) { stopTimer(); cancelIdle?.(); ++generation; }
+      if (document.hidden) { stopTimer(); cancelIdle?.(); cancelSetup?.(); ++generation; }
       else { startTimer(); if (nearby) queuePlanet(); }
       updatePlayback();
     };
@@ -125,8 +133,8 @@ export function BrandLockup({ controlsTheme = false }: { controlsTheme?: boolean
     const near = new IntersectionObserver(entries => {
       nearby = entries[0].isIntersecting;
       if (nearby) queuePlanet();
-      else { cancelIdle?.(); ++generation; }
-    }, { rootMargin: '240px 0px' });
+      else { cancelIdle?.(); cancelSetup?.(); ++generation; }
+    }, { rootMargin: '120px 0px' });
     const inView = new IntersectionObserver(entries => {
       visible = entries[0].isIntersecting;
       updatePlayback();
@@ -142,6 +150,7 @@ export function BrandLockup({ controlsTheme = false }: { controlsTheme?: boolean
       ++generation;
       cancelStart();
       cancelIdle?.();
+      cancelSetup?.();
       stopTimer();
       near.disconnect();
       inView.disconnect();

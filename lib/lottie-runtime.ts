@@ -26,6 +26,40 @@ declare global {
 
 let playerPromise: Promise<LottiePlayer> | undefined;
 const dataCache = new Map<string, Promise<AnimationData>>();
+const pendingSetups = new Set<(ready: boolean) => void>();
+let cancelSetupTick: (() => void) | undefined;
+
+function scheduleNextSetup() {
+  if (cancelSetupTick || pendingSetups.size === 0) return;
+  cancelSetupTick = afterPaintIdle(() => {
+    cancelSetupTick = undefined;
+    const next = pendingSetups.values().next().value;
+    if (next) {
+      pendingSetups.delete(next);
+      next(true);
+    }
+    scheduleNextSetup();
+  });
+}
+
+/** Build one animation per idle turn, with paint opportunities between instances. */
+export function queueAnimationSetup(): { ready: Promise<boolean>; cancel: () => void } {
+  let release!: (ready: boolean) => void;
+  const ready = new Promise<boolean>(resolve => { release = resolve; });
+  pendingSetups.add(release);
+  scheduleNextSetup();
+  return {
+    ready,
+    cancel: () => {
+      if (!pendingSetups.delete(release)) return;
+      release(false);
+      if (pendingSetups.size === 0) {
+        cancelSetupTick?.();
+        cancelSetupTick = undefined;
+      }
+    },
+  };
+}
 
 export function loadLottie(): Promise<LottiePlayer> {
   if (window.lottie) return Promise.resolve(window.lottie);

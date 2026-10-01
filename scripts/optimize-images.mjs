@@ -14,18 +14,19 @@ for (const name of names) {
   let original;
   try { original = await readFile(file); } catch { continue; }
   before += original.length;
-  for (const width of [128, 192, 256]) {
+  for (const width of [96, 128, 192, 256]) {
     const target = resolve(`public/flashfluent-assets/collection/${name}-${width}.webp`);
-    await sharp(original).resize(width, width).webp({ quality: 85, effort: 6 }).toFile(target);
+    await sharp(original).resize(width, width).webp({ quality: 78, effort: 6 }).toFile(target);
     if (width === 192) after += (await stat(target)).size;
   }
 }
 for (const name of ['flashfluent-practice', 'flashfluent-classroom', 'temple-city-school-district']) {
   const original = await readFile(`public/images/${name}.webp`);
   const metadata = await sharp(original).metadata();
-  const widths = [320, 480, 640, 800, metadata.width].filter((width, i, all) => width <= metadata.width && all.indexOf(width) === i);
+  const widths = [320, 480, ...(name === 'temple-city-school-district' ? [528] : []), 640, 800, metadata.width]
+    .filter((width, i, all) => width <= metadata.width && all.indexOf(width) === i);
   for (const width of widths) {
-    await sharp(original).resize({ width }).webp({ quality: 85, effort: 6 })
+    await sharp(original).resize({ width }).webp({ quality: 78, effort: 6 })
       .toFile(`public/images/${name}-${width}.webp`);
   }
 }
