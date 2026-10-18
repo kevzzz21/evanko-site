@@ -45,7 +45,7 @@ const progressFeatures = [
 
 const questions = [
   ['Is FlashFluent free?', 'Yes. FlashFluent is a free learning tool provided by the Evanko Foundation. Try the first world without an account; create a free account to access later worlds and sync your progress.'],
-  ['Do I need to download an app?', 'You can start in your browser at learn.flashfluent.app. Choose one of the language cards on this page to open that course directly.'],
+  ['Do I need to download an app?', 'No. You can start in your browser at learn.flashfluent.app, or download FlashFluent for Android on Google Play. The iPhone app is coming soon. Choose one of the language cards on this page to open that course in your browser.'],
   ['Where should a beginner start?', 'Choose a language and a familiar topic in the first world, such as food, animals, or colors. Begin with Study to meet the words, then try Match and Listen with the same collection.'],
   ['Can I change the hints on the cards?', 'Yes. Display controls let you adjust artwork, English meanings, and reading support where available. Mandarin has pinyin and script options; Japanese and Korean offer reading guides.'],
 ];
@@ -58,6 +58,18 @@ export default function Projects() {
         <div>
           <p className="eyebrow">FlashFluent · An Evanko Foundation program</p>
           <h1>Flashcards for<br /><em>faster learning.</em></h1>
+          <div className="flashfluent__downloads" role="group" aria-label="Get the FlashFluent app">
+            <div className="flashfluent__download">
+              <span className="flashfluent__download-status">Available on Android</span>
+              <a href="https://play.google.com/store/apps/details?id=com.evankofoundation.flashfluent" aria-label="Get FlashFluent on Google Play">
+                <img src="/images/google-play-badge.webp" alt="Get it on Google Play" width="1280" height="380" />
+              </a>
+            </div>
+            <div className="flashfluent__download">
+              <span className="flashfluent__download-status">Coming soon on iPhone</span>
+              <img src="/images/app-store-badge.webp" alt="App Store — coming soon" width="3840" height="1138" />
+            </div>
+          </div>
           <p className="flash-hero__copy">See a word. Hear it. Put it into practice. FlashFluent combines illustrated flashcards with matching and listening games to make a new language feel approachable from the very first card.</p>
           <p className="flash-hero__copy">Six free language courses. More than 1,600 illustrated terms in each. Choose a topic, try a game, and build a vocabulary you can keep coming back to.</p>
           <div className="button-row flashfluent__hero-actions"><a className="button button--red" href="#courses">Choose your language</a><a className="text-link" href="#practice-modes">Explore the games <span aria-hidden="true">→</span></a></div>

@@ -240,6 +240,12 @@ html body .about .about__quote{background:#f0eee8!important}html body .about .ab
 .flashfluent-page section[id]{scroll-margin-top:100px}
 .flashfluent-page .flash-hero{grid-template-columns:minmax(0,1fr) minmax(0,.95fr)}
 .flashfluent__hero-actions{margin-top:28px}
+.flashfluent__downloads{display:flex;flex-wrap:wrap;gap:18px 20px;margin:28px 0}
+.flashfluent__download{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.flashfluent__download-status{color:var(--ink);font-size:13px;font-weight:600;line-height:1.4}
+.flashfluent__download a{display:block;border-radius:8px}
+.flashfluent__download img{display:block;width:180px;max-width:100%;height:auto}
+@media(max-width:430px){.flashfluent__downloads{gap:16px 12px}.flashfluent__download{width:calc((100% - 12px)/2)}.flashfluent__download-status{font-size:12px}}
 .flashfluent-page .section-heading{margin-bottom:30px}
 .flashfluent-page .section-heading h2,.flashfluent__feature h2,.flashfluent__getting-started h2{margin:0;color:var(--world-color);font-size:clamp(2.55rem,4.3vw,4.4rem);font-weight:600;letter-spacing:-.065em;line-height:.98;transition:color .45s ease}
 .flashfluent__intro{max-width:670px;margin:22px 0 0;color:var(--muted);font-size:18px;line-height:1.6}
