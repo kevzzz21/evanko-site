@@ -246,9 +246,9 @@ html body .about .about__quote{background:#f0eee8!important}html body .about .ab
 .flashfluent__download a{display:block;border-radius:8px}
 .flashfluent__download img{display:block;width:180px;max-width:100%;height:auto}
 @media(max-width:430px){.flashfluent__downloads{gap:16px 12px}.flashfluent__download{width:calc((100% - 12px)/2)}.flashfluent__download-status{font-size:12px}}
-.flashfluent-page .section-heading{margin-bottom:30px}
+.flashfluent-page .section-heading{max-width:none;margin-bottom:30px}
 .flashfluent-page .section-heading h2,.flashfluent__feature h2,.flashfluent__getting-started h2{margin:0;color:var(--world-color);font-size:clamp(2.55rem,4.3vw,4.4rem);font-weight:600;letter-spacing:-.065em;line-height:.98;transition:color .45s ease}
-.flashfluent__intro{max-width:670px;margin:22px 0 0;color:var(--muted);font-size:18px;line-height:1.6}
+.flashfluent__intro{max-width:900px;margin:22px 0 0;color:var(--muted);font-size:18px;line-height:1.6}
 .flashfluent-page .courses-section{padding:28px 0 82px}
 .flashfluent-page .course-grid{gap:22px 18px}
 .flashfluent-page .course{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:25px;background:var(--cream);font-size:16px;font-weight:400;border-color:var(--line);box-shadow:0 6px 0 #e5dccf;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
@@ -263,7 +263,7 @@ html body .about .about__quote{background:#f0eee8!important}html body .about .ab
 .course__action{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:auto;color:var(--world-color);font-size:16px;font-weight:600;transition:color .45s ease}
 .course__action>span{font-size:25px;transition:transform .18s ease}
 .course:hover .course__action>span{transform:translateX(4px)}
-.flashfluent__course-note{max-width:760px;margin:28px 0 0;color:var(--muted);font-size:15px;line-height:1.6}
+.flashfluent__course-note{max-width:900px;margin:28px 0 0;color:var(--muted);font-size:15px;line-height:1.6}
 .flashfluent-page .mode-card{display:flex;flex-direction:column;min-width:0;padding:28px}
 .flashfluent-page .mode-card h3{color:var(--world-color);font-size:28px;transition:color .45s ease}
 .flashfluent-page .mode-card p{font-size:16px;line-height:1.6}
@@ -491,3 +491,10 @@ html body .site-header .site-nav__mobile .site-menu__icon i{width:20px;backgroun
   .newsletter-feature__copy{padding:26px}
 }
 @media(prefers-reduced-motion:reduce){.home-action-callout,.button--callout-light,.program-facts__newsletter,.program-facts__newsletter-title{transition:none}}
+
+
+/* FlashFluent localized acquisition pages inherit the Projects page; this only adds the compact locale control. */
+.flashfluent__landing-language{display:flex;align-items:center;justify-content:flex-end;gap:10px;padding-top:17px;color:var(--muted);font-size:13px;font-weight:600}.flashfluent__landing-language details{position:relative}.flashfluent__landing-language summary{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:var(--cream);color:var(--ink);cursor:pointer;list-style:none}.flashfluent__landing-language summary::-webkit-details-marker{display:none}.flashfluent__landing-language nav{position:absolute;z-index:4;right:0;top:calc(100% + 7px);display:grid;min-width:180px;padding:7px;border:1px solid var(--line);border-radius:14px;background:var(--cream);box-shadow:0 7px 0 #e5dccf}.flashfluent__landing-language nav a{padding:8px 10px;border-radius:8px}.flashfluent__landing-language nav a:hover,.flashfluent__landing-language nav a[aria-current=page]{color:var(--world-color);background:#f4f0e6}@media(max-width:760px){.flashfluent__landing-language{padding-top:10px;font-size:12px}}
+
+/* Primary course choice follows FlashFluent onboarding: flags first, then native and course names. */
+.flashfluent__primary-picker{padding:20px 0 74px}.flashfluent__primary-heading{margin:0 0 29px}.flashfluent__primary-heading h1{margin:0;color:var(--world-color);font-size:clamp(2.65rem,4.75vw,4.9rem);font-weight:600;letter-spacing:-.075em;line-height:.92}.flashfluent__primary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.flashfluent__primary-course{display:flex;flex-direction:column;align-items:center;min-height:272px;padding:24px 15px 25px;border:1px solid var(--line);border-radius:22px;background:var(--cream);box-shadow:0 6px 0 #e5dccf;text-align:center;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.flashfluent__primary-course:hover{border-color:var(--world-color);box-shadow:0 9px 0 #e5dccf;transform:translateY(-3px)}.flashfluent__primary-course img{width:116px;height:116px;object-fit:contain}.flashfluent__primary-course strong{margin-top:18px;color:var(--world-color);font-size:26px;line-height:1.12}.flashfluent__primary-course span{margin-top:7px;color:var(--ink);font-size:17px;font-weight:600;line-height:1.2}@media(max-width:760px){.flashfluent__primary-picker{padding:17px 0 55px}.flashfluent__primary-heading{margin-bottom:23px}.flashfluent__primary-heading h1{font-size:clamp(2.45rem,10vw,3.7rem)}.flashfluent__primary-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.flashfluent__primary-course{min-height:194px;padding:15px 7px 17px;border-radius:17px}.flashfluent__primary-course img{width:76px;height:76px}.flashfluent__primary-course strong{margin-top:11px;font-size:19px}.flashfluent__primary-course span{margin-top:5px;font-size:14px}}@media(max-width:380px){.flashfluent__primary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

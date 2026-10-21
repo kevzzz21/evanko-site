@@ -1,0 +1,147 @@
+/* eslint-disable next/no-img-element -- self-hosted optimized assets in a static export without an image optimizer. */
+import Link from './site-link';
+import { AnimatedIcon } from './animated-icon';
+import { LanguageScroller } from './language-scroller';
+import { SiteFooter, SiteHeader } from './site-chrome';
+import { marketingCopy, type FlashFluentMarketingLocale } from '../lib/flashfluent-marketing-locales';
+
+
+const projects=[['More language support','green-planet.json','Our next product goal is ten available language courses, giving more people access to practical language support for school, work, and daily life.'],['More classrooms','purple-planet.json','We are seeking volunteers to help onboard teachers and schools to FlashFluent and bring free language practice to more learners.'],['Broader access','blue-teal-planet.json','We are seeking volunteers to create custom curriculum that matches what schools are teaching, helping more teachers make FlashFluent part of their lessons.']];
+
+const courses = [
+  { slug: 'mandarin', flag: 'chinese-flag.png', name: 'Mandarin Chinese', native: '中文', lang: 'zh', copy: 'Explore Chinese characters with pinyin reading support and a choice of simplified or traditional script.' },
+  { slug: 'japanese', flag: 'japanese-flag.png', name: 'Japanese', native: '日本語', lang: 'ja', copy: 'Connect Japanese words with illustrations, pronunciation, and rōmaji reading support.' },
+  { slug: 'korean', flag: 'korean-flag.png', name: 'Korean', native: '한국어', lang: 'ko', copy: 'Practice Korean vocabulary with Hangul, pronunciation, and romanization to help you get started.' },
+  { slug: 'spanish', flag: 'mexican-flag.png', name: 'Spanish', native: 'Español', lang: 'es', copy: 'Build everyday vocabulary in Latin American Spanish through pictures, words, and listening practice.' },
+  { slug: 'french', flag: 'french-flag.png', name: 'French', native: 'Français', lang: 'fr', copy: 'Get familiar with French words and their pronunciation, then put them to use in practice games.' },
+  { slug: 'german', flag: 'german-flag.png', name: 'German', native: 'Deutsch', lang: 'de', copy: 'Discover German vocabulary one collection at a time, with illustrated cards and audio practice.' },
+  { slug: 'english', flag: 'american-flag.png', name: 'English', native: 'English', lang: 'en', copy: 'Build everyday English vocabulary through pictures, words, and listening practice.' },
+];
+
+const modes = [
+  { title: 'Study', icon: 'green-planet.json', subtitle: 'Meet the words.', copy: 'Explore illustrated flashcards at your own pace. See the word, hear its pronunciation, and check its English meaning. Mark words you know and revisit the ones that need another look.', detail: 'A place to begin, review, and get comfortable with a collection.' },
+  { title: 'Match', icon: 'global-plane.json', subtitle: 'Make the connection.', copy: 'Match a picture to its word, or a word to its picture, by choosing from a grid of answers. Each round gives you another chance to recognize vocabulary, with feedback on your choices and a streak to build.', detail: 'Switch the prompt style to practice recognition in both directions.' },
+  { title: 'Listen', icon: 'trophy-celebration.json', subtitle: 'Let your ears lead.', copy: 'Listen to a word and choose the matching answer. Replay the pronunciation when you need another listen, then keep going through the collection. It is a different way to practice the same vocabulary.', detail: 'Adjust the picture and text hints as you become more familiar with the sounds.' },
+];
+
+const topics = [
+  ['Food & ingredients', 'apple', 'From fruit and vegetables to drinks and ingredients, explore the words behind everyday meals.'],
+  ['Animals & nature', 'elephant', 'Discover animals, landscapes, and the natural world through illustrated vocabulary.'],
+  ['People & family', 'mother', 'Learn words for family members, people, feelings, and the relationships around you.'],
+  ['Travel & places', 'bicycle', 'Practice transport and places around town, from bicycles and buses to your next destination.'],
+  ['Home & daily life', 'coming-home', 'Build vocabulary for daily actions, household spaces, clothing, and familiar routines.'],
+  ['School & work', 'school-bus', 'Explore collections about school, professions, technology, and the working world.'],
+];
+
+const progressFeatures = [
+  ['Collect your words', 'When a term feels familiar, collect it as a trophy. Your Trophy Case brings those collected cards together so you can see the vocabulary you have chosen to keep.'],
+  ['Give tricky words another turn', 'At the end of a Study deck, Review Missed Words brings you back to the terms you marked for more practice. You can also redo a deck rather than move on before you feel ready.'],
+  ['Pick up where you left off', 'Create a free account to save and sync your progress across devices. Your collections and practice streaks give you a way to see your own progress as you return.'],
+];
+
+const questions = [
+  ['Is FlashFluent free?', 'Yes. FlashFluent is a free learning tool provided by the Evanko Foundation. Try the first world without an account; create a free account to access later worlds and sync your progress.'],
+  ['Do I need to download an app?', 'No. You can start in your browser at learn.flashfluent.app, or download FlashFluent for Android on Google Play. The iPhone app is coming soon. Choose one of the language cards on this page to open that course in your browser.'],
+  ['Where should a beginner start?', 'Choose a language and a familiar topic in the first world, such as food, animals, or colors. Begin with Study to meet the words, then try Match and Listen with the same collection.'],
+  ['Can I change the hints on the cards?', 'Yes. Display controls let you adjust artwork, English meanings, and reading support where available. Mandarin has pinyin and script options; Japanese and Korean offer reading guides.'],
+];
+
+const landingLanguages = [
+  ['en', 'English'], ['zh-hans', '简体中文'], ['zh-hant', '繁體中文'], ['es', 'Español'],
+  ['fr', 'Français'], ['de', 'Deutsch'], ['ja', '日本語'], ['ko', '한국어'],
+  ['id', 'Bahasa Indonesia'], ['tl', 'Tagalog'],
+] as const;
+
+function flashFluentHref(course: string, baseLanguage: string) {
+  const params = new URLSearchParams({ course, base: baseLanguage, onboarding: 'instructions' });
+  return `https://learn.flashfluent.app/?${params.toString()}`;
+}
+
+export function FlashFluentProjectPage({ baseLanguage = 'en', localePath = 'en' }: { baseLanguage?: string; localePath?: FlashFluentMarketingLocale }) {
+  const t = (source: string, variables?: Record<string, string>) => marketingCopy(localePath, source, variables);
+  const documentLanguage = ({ en: 'en', 'zh-hans': 'zh-Hans', 'zh-hant': 'zh-Hant', es: 'es', fr: 'fr', de: 'de', ja: 'ja', ko: 'ko', id: 'id', tl: 'tl' } as const)[localePath];
+  return <div className="site-page">
+    <SiteHeader currentPath="/projects" />
+    <main className="flashfluent-page" lang={documentLanguage}>
+      <div className="shell flashfluent__landing-language">
+        <span>{t('Page language')}</span>
+        <details><summary>{landingLanguages.find(([path]) => path === localePath)?.[1] ?? 'English'}</summary>
+          <nav aria-label={t('Page language')}>{landingLanguages.map(([path, label]) => <a href={path === 'en' ? '/flashfluent' : `/flashfluent/${path}`} key={path} aria-current={path === localePath ? 'page' : undefined}>{label}</a>)}</nav>
+        </details>
+      </div>
+      <section className="flashfluent__primary-picker shell" aria-labelledby="primary-language-heading">
+        <div className="flashfluent__primary-heading"><p className="eyebrow">{t('FlashFluent · Free to learn')}</p><h1 id="primary-language-heading">{t('Learn a new language, for free.')}</h1></div>
+        <div className="flashfluent__primary-grid">{courses.map(({ slug, flag, name, native, lang }) => <a className="flashfluent__primary-course" href={flashFluentHref(slug, baseLanguage)} key={slug} aria-label={t('Start learning {course} with FlashFluent', { course: t(name) })}>
+          <img src={`/flashfluent-assets/course-flags/${flag}`} alt="" width="96" height="96" loading="lazy" decoding="async" /><strong lang={lang}>{native}</strong><span>{t(name)}</span>
+        </a>)}</div>
+      </section>
+
+      <section className="flash-hero shell">
+        <div>
+          <p className="eyebrow">{t('FlashFluent · An Evanko Foundation program')}</p>
+          <h1>{t('Flashcards for faster learning.')}</h1>
+          <div className="flashfluent__downloads" role="group" aria-label={t('Get the FlashFluent app')}>
+            <div className="flashfluent__download">
+              <span className="flashfluent__download-status">{t('Available on Android')}</span>
+              <a href="https://play.google.com/store/apps/details?id=com.evankofoundation.flashfluent" aria-label={t('Get FlashFluent on Google Play')}>
+                <img src="/images/google-play-badge.webp" alt={t('Get it on Google Play')} width="1280" height="380" />
+              </a>
+            </div>
+            <div className="flashfluent__download">
+              <span className="flashfluent__download-status">{t('Coming soon on iPhone')}</span>
+              <img src="/images/app-store-badge.webp" alt={t('App Store — coming soon')} width="3840" height="1138" />
+            </div>
+          </div>
+        </div>
+        <LanguageScroller label={t('A collection of FlashFluent illustrated terms')} />
+      </section>
+
+      <section className="courses-section shell" id="courses" aria-labelledby="courses-heading">
+        <div className="section-heading"><p className="eyebrow">{t('Seven languages · Free to learn')}</p><h2 id="courses-heading">{t('Your next language starts here.')}</h2><p className="flashfluent__intro">{t('Each course includes illustrated vocabulary, pronunciation, and all three practice modes. Pick a language to open its first world and start exploring.')}</p></div>
+        <div className="course-grid">{courses.map(({ slug, flag, name, native, lang, copy }) => <a className="course" href={flashFluentHref(slug, baseLanguage)} key={slug} aria-label={t('Start learning {course} with FlashFluent', { course: t(name) })}>
+          <div className="course__heading"><img src={`/flashfluent-assets/course-flags/${flag}`} alt="" width="57" height="57" loading="lazy" decoding="async" /><div><h3>{t(name)}</h3><span className="course__native" lang={lang}>{native}</span></div></div>
+          <p>{t(copy)}</p><span className="course__action">{t('Start learning')} <span aria-hidden="true">→</span></span>
+        </a>)}</div>
+        <p className="flashfluent__course-note">{t('Start the first world without an account. A free account opens later worlds and lets you save and sync your progress.')}</p>
+      </section>
+
+      <section className="flash-modes" id="practice-modes" aria-labelledby="modes-heading"><div className="shell">
+        <div className="section-heading"><p className="eyebrow">{t('Three ways to practice')}</p><h2 id="modes-heading">{t('Study, Match, and Listen.')}</h2><p className="flashfluent__intro">{t('Get to know a collection with flashcards, then practice recognizing its words by sight and sound. You can move between activities using the same vocabulary.')}</p></div>
+        <div className="modes-grid">{modes.map(({ title, icon, subtitle, copy, detail }) => <article className="mode-card" key={title}>
+          <AnimatedIcon path={icon} className="mode-card__icon" /><h3>{t(title)}</h3><p className="mode-card__subtitle">{t(subtitle)}</p><p>{t(copy)}</p><p className="mode-card__detail">{t(detail)}</p><a className="text-link" href="#courses">{t('Choose a course')} <span aria-hidden="true">→</span></a>
+        </article>)}</div>
+        <p className="flashfluent__course-note">{t('Once you open a language, choose a collection and select Study, Match, or Listen inside FlashFluent.')}</p>
+      </div></section>
+
+      <section className="flashfluent__feature shell" aria-labelledby="illustrations-heading">
+        <div className="flashfluent__photo"><img src="/images/flashfluent-practice-1046.webp" srcSet="/images/flashfluent-practice-320.webp 320w, /images/flashfluent-practice-480.webp 480w, /images/flashfluent-practice-640.webp 640w, /images/flashfluent-practice-800.webp 800w, /images/flashfluent-practice-1046.webp 1046w" sizes="(max-width: 760px) calc(100vw - 28px), (max-width: 1200px) 45vw, 530px" alt={t('A learner practicing Mandarin vocabulary with illustrated color cards in FlashFluent')} width="1046" height="696" loading="lazy" decoding="async" /></div>
+        <div><p className="eyebrow">{t('Pictures, pronunciation, and reading support')}</p><h2 id="illustrations-heading">{t('More ways to meet a word.')}</h2><p>{t('An illustration gives you something concrete to connect with a new word. Audio adds its pronunciation. The written term and English meaning help you check the connection as you learn.')}</p><p>{t('Make the cards work for you: adjust the picture, meaning, and reading hints instead of using the same setup forever. Keep a reading guide visible while you are getting started, then try practicing with fewer hints.')}</p><p>{t('Mandarin offers pinyin and simplified or traditional characters. Japanese and Korean include reading support alongside their scripts, so unfamiliar writing does not have to stop you from beginning.')}</p><a className="text-link" href="#courses">{t('Find your course')} <span aria-hidden="true">→</span></a></div>
+      </section>
+
+      <section className="flashfluent__topics" aria-labelledby="topics-heading"><div className="shell">
+        <div className="section-heading"><p className="eyebrow">{t('79 collections across 10 worlds in each course')}</p><h2 id="topics-heading">{t('Words for the world around you.')}</h2><p className="flashfluent__intro">{t('Vocabulary is organized into themed collections, so you can focus on one area at a time. Start with familiar things and explore more topics as you go.')}</p></div>
+        <div className="flashfluent__topic-grid">{topics.map(([title, image, copy]) => <article className="flashfluent__topic" key={title}><img src={`/flashfluent-assets/collection/${image}.webp`} alt="" width="76" height="76" loading="lazy" decoding="async" /><div><h3>{t(title)}</h3><p>{t(copy)}</p></div></article>)}</div>
+        <a className="text-link" href="#courses">{t('Choose a language and explore its collections')} <span aria-hidden="true">→</span></a>
+      </div></section>
+
+      <section className="flashfluent__progress shell" aria-labelledby="progress-heading">
+        <div className="section-heading"><p className="eyebrow">{t('Practice you can return to')}</p><h2 id="progress-heading">{t('Build your vocabulary. Keep your progress.')}</h2></div>
+        <div className="flashfluent__progress-grid">{progressFeatures.map(([title, copy], index) => <article key={title}><span className="flashfluent__number" aria-hidden="true">0{index + 1}</span><h3>{t(title)}</h3><p>{t(copy)}</p></article>)}</div>
+      </section>
+
+      <section className="flashfluent__getting-started" aria-labelledby="getting-started-heading"><div className="shell">
+        <div><p className="eyebrow">{t('A simple place to begin')}</p><h2 id="getting-started-heading">{t('One collection. A few new words.')}</h2><p>{t('You do not need to tackle an entire language at once. Here is a starting routine you can make your own.')}</p><ol className="flashfluent__steps"><li><strong>{t('Choose a language and a topic.')}</strong> {t('Open the first world and pick something familiar, such as food or colors.')}</li><li><strong>{t('Meet the words in Study.')}</strong> {t('Look at the cards, play the pronunciation, and notice which words need more practice.')}</li><li><strong>{t('Try Match and Listen.')}</strong> {t('Practice the same words in a different way, then return to the ones you want to review.')}</li></ol><a className="text-link" href="#courses">{t('Take the first step')} <span aria-hidden="true">→</span></a></div>
+        <div className="flashfluent__faq"><h3>{t('Before you start')}</h3>{questions.map(([question, answer]) => <details key={question}><summary>{t(question)}</summary><p>{t(answer)}</p></details>)}</div>
+      </div></section>
+
+      <section className="flash-cta shell"><div className="flash-cta__box"><p className="eyebrow">{t('Made available by the Evanko Foundation')}</p><h2>{t('Start with your first card.')}</h2><p>{t('Our mission is to make language learning accessible to everyone, everywhere, for free. FlashFluent gives you a place to begin today.')}</p><a className="button" href="#courses">{t('Choose a language')}</a></div></section>
+
+      <section className="projects__future shell" aria-labelledby="projects-future-heading">
+        <div className="projects__next"><p className="eyebrow">{t('The work ahead')}</p><h2 id="projects-future-heading">{t('More languages. More ways to learn.')}</h2><p>{t('We are building toward ten available language courses and wider access. Volunteers can help onboard teachers and schools, review language content, offer tutoring support, and create custom curriculum aligned with school lessons.')}</p></div>
+        <div className="project-grid">{projects.map(([title, icon, copy]) => <article className="project-card" key={title}><AnimatedIcon path={icon} className="project-card__icon" /><h3>{t(title)}</h3><p>{t(copy)}</p><span className="status">{t('Next focus')}</span></article>)}</div>
+        <div className="projects__involved"><p className="eyebrow">{t('Help expand access')}</p><h2>{t('Help bring free practice to more learners.')}</h2><p>{t('Offer tutoring or language review, help onboard a school, or contribute curriculum experience. Donations help cover servers, hosting, development, language expansion, and, most importantly, wider access.')}</p><div className="button-row"><Link href="/get-involved" className="button button--primary">{t('Get involved')}</Link><Link href="/donate" className="button button--outline">{t('Donate')}</Link></div></div>
+      </section>
+    </main>
+    <SiteFooter currentPath="/projects" />
+  </div>;
+}
