@@ -36,21 +36,57 @@ export function GoogleAdsAnalytics() {
       document.head.append(script);
     }
 
-    const trackFlashFluentCourseClick = (event: MouseEvent) => {
+    const trackOutboundAppClick = (event: MouseEvent) => {
       const target = event.target instanceof Element ? event.target.closest('a[href]') : null;
       if (!target) return;
       const href = new URL(target.getAttribute('href') ?? '', window.location.href);
-      if (href.hostname !== 'learn.flashfluent.app') return;
-      window.gtag?.('event', 'flashfluent_course_cta_clicked', {
-        source_page: window.location.pathname,
-        course: href.searchParams.get('course') ?? 'unspecified',
-        base_language: href.searchParams.get('base') ?? 'unspecified',
-        onboarding: href.searchParams.get('onboarding') === 'instructions'
-      });
+      const courseCta = href.hostname === 'learn.flashfluent.app';
+      const googlePlayCta = href.hostname === 'play.google.com'
+        && href.pathname === '/store/apps/details'
+        && href.searchParams.get('id') === 'com.evankofoundation.flashfluent';
+      if (!courseCta && !googlePlayCta) return;
+
+      const eventName = courseCta ? 'flashfluent_course_cta_clicked' : 'google_play_cta_clicked';
+      const parameters = courseCta
+        ? {
+          source_page: window.location.pathname,
+          course: href.searchParams.get('course') ?? 'unspecified',
+          base_language: href.searchParams.get('base') ?? 'unspecified',
+          onboarding: href.searchParams.get('onboarding') === 'instructions'
+        }
+        : {
+          source_page: window.location.pathname,
+          app_id: href.searchParams.get('id')
+        };
+
+      // Give GA4 a short chance to send the outbound click before leaving this
+      // document. Modified/new-tab clicks retain their normal browser behavior.
+      const normalNavigation = event.button === 0
+        && !event.defaultPrevented
+        && !event.metaKey
+        && !event.ctrlKey
+        && !event.shiftKey
+        && !event.altKey
+        && (!target.target || target.target === '_self');
+      if (!normalNavigation) {
+        window.gtag?.('event', eventName, parameters);
+        return;
+      }
+
+      event.preventDefault();
+      let navigated = false;
+      const continueToDestination = () => {
+        if (navigated) return;
+        navigated = true;
+        window.location.assign(href.toString());
+      };
+      window.gtag?.('event', eventName, { ...parameters, event_callback: continueToDestination });
+      window.setTimeout(continueToDestination, 750);
     };
 
-    document.addEventListener('click', trackFlashFluentCourseClick);
-    return () => document.removeEventListener('click', trackFlashFluentCourseClick);
+
+    document.addEventListener('click', trackOutboundAppClick);
+    return () => document.removeEventListener('click', trackOutboundAppClick);
   }, []);
 
   return null;
