@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { GoogleAdsAnalytics } from '../components/google-ads-analytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://evanko.co'),
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body><GoogleAdsAnalytics />{children}</body></html>;
 }
