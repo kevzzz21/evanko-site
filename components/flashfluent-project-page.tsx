@@ -4,6 +4,7 @@ import { AnimatedIcon } from './animated-icon';
 import { LanguageScroller } from './language-scroller';
 import { SiteFooter, SiteHeader } from './site-chrome';
 import { marketingCopy, type FlashFluentMarketingLocale } from '../lib/flashfluent-marketing-locales';
+import { flashFluentHref } from '../lib/foundation';
 
 
 const projects=[['More language support','green-planet.json','Our next product goal is ten available language courses, giving more people access to practical language support for school, work, and daily life.'],['More classrooms','purple-planet.json','We are seeking volunteers to help onboard teachers and schools to FlashFluent and bring free language practice to more learners.'],['Broader access','blue-teal-planet.json','We are seeking volunteers to create custom curriculum that matches what schools are teaching, helping more teachers make FlashFluent part of their lessons.']];
@@ -51,11 +52,6 @@ const landingLanguages = [
   ['fr', 'Français'], ['de', 'Deutsch'], ['ja', '日本語'], ['ko', '한국어'],
   ['id', 'Bahasa Indonesia'], ['tl', 'Tagalog'],
 ] as const;
-
-function flashFluentHref(course: string, baseLanguage: string) {
-  const params = new URLSearchParams({ course, base: baseLanguage, onboarding: 'instructions' });
-  return `https://learn.flashfluent.app/?${params.toString()}`;
-}
 
 export function FlashFluentProjectPage({ baseLanguage = 'en', localePath = 'en' }: { baseLanguage?: string; localePath?: FlashFluentMarketingLocale }) {
   const t = (source: string, variables?: Record<string, string>) => marketingCopy(localePath, source, variables);

@@ -4,10 +4,11 @@ import Link from '../../components/site-link';
 import { AnimatedIcon } from '../../components/animated-icon';
 import { LanguageScroller } from '../../components/language-scroller';
 import { SiteFooter, SiteHeader } from '../../components/site-chrome';
+import { flashFluentHref } from '../../lib/foundation';
 
 export const metadata: Metadata = {
   title: 'FlashFluent | Free language flashcards and practice games',
-  description: 'Learn with FlashFluent: six free language courses, more than 1,600 illustrated terms per course, and Study, Match, and Listen activities. Choose a language and start practicing.',
+  description: 'Learn with FlashFluent: seven free language courses, more than 1,600 illustrated terms per course, and Study, Match, and Listen activities. Choose a language and start practicing.',
   alternates: { canonical: '/projects' },
 };
 
@@ -20,6 +21,7 @@ const courses = [
   { slug: 'spanish', flag: 'mexican-flag.png', name: 'Spanish', native: 'Español', lang: 'es', copy: 'Build everyday vocabulary in Latin American Spanish through pictures, words, and listening practice.' },
   { slug: 'french', flag: 'french-flag.png', name: 'French', native: 'Français', lang: 'fr', copy: 'Get familiar with French words and their pronunciation, then put them to use in practice games.' },
   { slug: 'german', flag: 'german-flag.png', name: 'German', native: 'Deutsch', lang: 'de', copy: 'Discover German vocabulary one collection at a time, with illustrated cards and audio practice.' },
+  { slug: 'english', flag: 'american-flag.png', name: 'English', native: 'English', lang: 'en', copy: 'Build everyday English vocabulary through pictures, words, and listening practice.' },
 ];
 
 const modes = [
@@ -71,15 +73,15 @@ export default function Projects() {
             </div>
           </div>
           <p className="flash-hero__copy">See a word. Hear it. Put it into practice. FlashFluent combines illustrated flashcards with matching and listening games to make a new language feel approachable from the very first card.</p>
-          <p className="flash-hero__copy">Six free language courses. More than 1,600 illustrated terms in each. Choose a topic, try a game, and build a vocabulary you can keep coming back to.</p>
+          <p className="flash-hero__copy">Seven free language courses. More than 1,600 illustrated terms in each. Choose a topic, try a game, and build a vocabulary you can keep coming back to.</p>
           <div className="button-row flashfluent__hero-actions"><a className="button button--red" href="#courses">Choose your language</a><a className="text-link" href="#practice-modes">Explore the games <span aria-hidden="true">→</span></a></div>
         </div>
         <LanguageScroller label="A collection of FlashFluent illustrated terms" />
       </section>
 
       <section className="courses-section shell" id="courses" aria-labelledby="courses-heading">
-        <div className="section-heading"><p className="eyebrow">Six languages · Free to learn</p><h2 id="courses-heading">Your next language<br />starts here.</h2><p className="flashfluent__intro">Each course includes illustrated vocabulary, pronunciation, and all three practice modes. Pick a language to open its first world and start exploring.</p></div>
-        <div className="course-grid">{courses.map(({ slug, flag, name, native, lang, copy }) => <a className="course" href={`https://learn.flashfluent.app/?course=${slug}`} key={slug} aria-label={`Start learning ${name} with FlashFluent`}>
+        <div className="section-heading"><p className="eyebrow">Seven languages · Free to learn</p><h2 id="courses-heading">Your next language<br />starts here.</h2><p className="flashfluent__intro">Each course includes illustrated vocabulary, pronunciation, and all three practice modes. Pick a language to open its first world and start exploring.</p></div>
+        <div className="course-grid">{courses.map(({ slug, flag, name, native, lang, copy }) => <a className="course" href={flashFluentHref(slug)} key={slug} aria-label={`Start learning ${name} with FlashFluent`}>
           <div className="course__heading"><img src={`/flashfluent-assets/course-flags/${flag}`} alt="" width="57" height="57" loading="lazy" decoding="async" /><div><h3>{name}</h3><span className="course__native" lang={lang}>{native}</span></div></div>
           <p>{copy}</p><span className="course__action">Start learning <span aria-hidden="true">→</span></span>
         </a>)}</div>

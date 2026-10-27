@@ -11,6 +11,13 @@ export const foundation = {
   updated: 'September 2026', learningUrl: 'https://learn.flashfluent.app',
 } as const;
 
+/** Canonical web handoff: the learner app opens the chosen course, presents
+ * base-language onboarding, and preserves ad/analytics cross-domain context. */
+export function flashFluentHref(course: string, baseLanguage = 'en') {
+  const params = new URLSearchParams({ course, base: baseLanguage, onboarding: 'instructions' });
+  return `https://learn.flashfluent.app/?${params.toString()}`;
+}
+
 // PayPal donation destination supplied by the Foundation.
 export const donationUrl = 'https://www.paypal.com/donate/?hosted_button_id=7C3C75EMHYGKC';
 
