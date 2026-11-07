@@ -22,6 +22,15 @@ function configureGoogleTag() {
   window.gtag('config', ADS_DESTINATION, options);
 }
 
+/** Fires only after a free-advice request has been stored successfully.
+ * Keep contact details out of analytics; this is an aggregate lead signal. */
+export function trackBusinessAdviceRequestSubmitted() {
+  window.gtag?.('event', 'business_advice_request_submitted', {
+    form_name: 'business_advice_request',
+    page_path: '/business-advice',
+  });
+}
+
 /** Adds the Google Ads base tag and records a learner's outbound course choice.
  * No identity, contact, or donation data is sent from this marketing site. */
 export function GoogleAdsAnalytics() {

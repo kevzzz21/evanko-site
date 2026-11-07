@@ -22,24 +22,23 @@ function currentLink(href: string, currentPath: string): 'page' | true | undefin
   return undefined;
 }
 
-export function SiteHeader({ currentPath }: { currentPath: string }) {
-  return <header className="site-header shell">
+export function SiteHeader({ currentPath, businessAdvice = false }: { currentPath: string; businessAdvice?: boolean }) {
+  const action = businessAdvice ? { href: '#request', label: 'Contact' } : { href: '/get-involved', label: 'Get involved' };
+  return <header className={`site-header shell${businessAdvice ? ' site-header--business' : ''}`}>
     <BrandLockup controlsTheme />
     <nav className="site-nav" aria-label="Main navigation">
       {navigation.map(([href, label]) => <SiteLink href={href} key={href} aria-current={currentLink(href, currentPath)}>{label}</SiteLink>)}
       <div className="site-header__actions">
-        <SiteLink href="/get-involved" className="header-link" aria-current={currentLink('/get-involved', currentPath)}>Get involved</SiteLink>
-        <SiteLink href="/donate" className="header-link header-donate" aria-current={currentLink('/donate', currentPath)}>Donate</SiteLink>
+        <SiteLink href={action.href} className="header-link header-donate" aria-current={businessAdvice ? undefined : currentLink(action.href, currentPath)}>{action.label}</SiteLink>
       </div>
     </nav>
     <div className="site-header__mobile-actions">
-      <SiteLink href="/donate" className="header-link header-donate site-header__mobile-donate" aria-current={currentLink('/donate', currentPath)}>Donate</SiteLink>
+      <SiteLink href={action.href} className="header-link header-donate site-header__mobile-donate" aria-current={businessAdvice ? undefined : currentLink(action.href, currentPath)}>{action.label}</SiteLink>
       <details className="site-nav__mobile">
         <summary><span className="site-menu__icon" aria-hidden="true"><i></i><i></i><i></i></span><span>Menu</span></summary>
         <nav aria-label="Mobile navigation">
           {navigation.map(([href, label]) => <SiteLink href={href} key={href} aria-current={currentLink(href, currentPath)}>{label}</SiteLink>)}
-          <SiteLink href="/get-involved" aria-current={currentLink('/get-involved', currentPath)}>Get involved</SiteLink>
-          <SiteLink href="/donate" className="header-donate" aria-current={currentLink('/donate', currentPath)}>Donate</SiteLink>
+          <SiteLink href={action.href} className="header-donate" aria-current={businessAdvice ? undefined : currentLink(action.href, currentPath)}>{action.label}</SiteLink>
         </nav>
       </details>
     </div>
@@ -48,7 +47,7 @@ export function SiteHeader({ currentPath }: { currentPath: string }) {
 
 export function SiteFooter({ currentPath }: { currentPath: string }) {
   // These pages already end with a dedicated support section.
-  const hasSupportSection = ['/', '/projects', '/mission', '/impact', '/donate', '/get-involved'].includes(currentPath);
+  const hasSupportSection = ['/', '/projects', '/mission', '/impact', '/donate', '/get-involved', '/business-advice'].includes(currentPath);
   return <>
     {!hasSupportSection && <SupportCallout />}
     <footer className="site-footer"><div className="shell">
