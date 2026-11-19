@@ -149,9 +149,8 @@ export default function FlashFluentAppsPage() {
   return (
     <main className="ff-launch-page" lang={language}>
       <section className="ff-launch-card" aria-labelledby="ff-launch-heading">
-        <div className="ff-launch-masthead">FlashFluent</div>
         <nav className="ff-language-picker" aria-label={copy.languageLabel}>
-          <span className="ff-language-label">{copy.languageLabel}:</span>
+          <span className="ff-language-label">Read this page in:</span>
           <div className="ff-language-links">
             {languages.map((code) => (
               <a
@@ -166,6 +165,7 @@ export default function FlashFluentAppsPage() {
             ))}
           </div>
         </nav>
+        <div className="ff-launch-masthead">FlashFluent</div>
 
         <div className="ff-launch-content">
           <h1 id="ff-launch-heading">{copy.title}</h1>

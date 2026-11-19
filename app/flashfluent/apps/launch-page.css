@@ -32,26 +32,36 @@
 }
 
 .ff-language-picker {
-  align-items: baseline;
-  background: #f5ecdf;
+  background: #fffdfa;
   border-bottom: 1px solid #e7ddd0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 12px;
-  padding: 14px 48px;
+  padding: 24px 32px 26px;
 }
 
 .ff-language-label {
-  color: #59645e;
-  font-size: 13px;
+  color: #46534b;
+  display: block;
+  font-size: 16px;
   font-weight: 700;
-  white-space: nowrap;
+  margin-bottom: 13px;
 }
 
-.ff-language-links { display: flex; flex-wrap: wrap; gap: 6px 10px; }
-.ff-language-links a { color: #52645a; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
-.ff-language-links a:hover, .ff-language-links a:focus-visible { color: var(--ff-red); }
-.ff-language-links .is-selected { color: var(--ff-red); font-weight: 800; text-decoration: none; }
+.ff-language-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.ff-language-links a {
+  align-items: center;
+  background: #f5ecdf;
+  border: 1px solid #ded1c0;
+  border-radius: 9px;
+  color: #46534b;
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 700;
+  min-height: 43px;
+  padding: 7px 13px;
+  text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+.ff-language-links a:hover, .ff-language-links a:focus-visible { background: #fbe1da; border-color: var(--ff-red); color: var(--ff-red); transform: translateY(-1px); }
+.ff-language-links .is-selected { background: var(--ff-red); border-color: var(--ff-red); color: white; }
 
 .ff-launch-content { padding: 48px; }
 .ff-launch-content h1, .ff-launch-content h2 { color: var(--ff-red); letter-spacing: -1.4px; margin: 0; }
@@ -91,6 +101,8 @@
   .ff-launch-content h2 { font-size: 24px; }
   .ff-launch-content p { font-size: 17px; }
   .ff-launch-lede { font-size: 21px !important; }
-  .ff-language-picker { padding-bottom: 13px; padding-top: 13px; }
+  .ff-language-picker { padding-bottom: 22px; padding-top: 22px; }
+  .ff-language-links { gap: 8px; }
+  .ff-language-links a { font-size: 14px; min-height: 40px; padding: 6px 11px; }
   .ff-launch-footer { padding: 0 22px 20px; }
 }
