@@ -1,0 +1,110 @@
+Campaign,Ad group,Ad group status,Keyword,Type,Status
+Evanko | Business Advice | US | Search,Free Business Advice,Enabled,,,
+Evanko | Business Advice | US | Search,Small Business Help,Enabled,,,
+Evanko | Business Advice | US | Search,Revenue And Operations,Enabled,,,
+Evanko | Business Advice | US | Search,Digital Marketing,Enabled,,,
+Evanko | Business Advice | US | Search,Ecommerce,Enabled,,,
+Evanko | Business Advice | US | Search,AI And Automation,Enabled,,,
+Evanko | Business Advice | US | Search,Software And APIs,Enabled,,,
+Evanko | Business Advice | US | Search,Nonprofit,Enabled,,,
+Evanko | Business Advice | US | Search,Free Business Advice,,[free business advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Free Business Advice,,"free business advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Free Business Advice,,[free small business advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Free Business Advice,,"free small business advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Free Business Advice,,[free business consulting],Exact,Enabled
+Evanko | Business Advice | US | Search,Free Business Advice,,"free business consulting",Phrase,Enabled
+Evanko | Business Advice | US | Search,Free Business Advice,,[free advice for small business],Exact,Enabled
+Evanko | Business Advice | US | Search,Free Business Advice,,"free advice for small business",Phrase,Enabled
+Evanko | Business Advice | US | Search,Free Business Advice,,[free business advisor],Exact,Enabled
+Evanko | Business Advice | US | Search,Free Business Advice,,"free business advisor",Phrase,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,[small business help],Exact,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,"small business help",Phrase,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,[business owner advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,"business owner advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,[small business advisor],Exact,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,"small business advisor",Phrase,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,[small business consultant],Exact,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,"small business consultant",Phrase,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,[help my small business],Exact,Enabled
+Evanko | Business Advice | US | Search,Small Business Help,,"help my small business",Phrase,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,[improve business profitability],Exact,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,"improve business profitability",Phrase,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,[improve profit margins],Exact,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,"improve profit margins",Phrase,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,[small business operations consultant],Exact,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,"small business operations consultant",Phrase,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,[business operations advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,"business operations advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,[analyze business p and l],Exact,Enabled
+Evanko | Business Advice | US | Search,Revenue And Operations,,"analyze business p and l",Phrase,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,[digital marketing advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,"digital marketing advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,[marketing consultant for small business],Exact,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,"marketing consultant for small business",Phrase,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,[google ads advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,"google ads advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,[social media advertising advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,"social media advertising advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,[email marketing advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Digital Marketing,,"email marketing advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Ecommerce,,[ecommerce consultant],Exact,Enabled
+Evanko | Business Advice | US | Search,Ecommerce,,"ecommerce consultant",Phrase,Enabled
+Evanko | Business Advice | US | Search,Ecommerce,,[ecommerce business advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Ecommerce,,"ecommerce business advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Ecommerce,,[help with ecommerce business],Exact,Enabled
+Evanko | Business Advice | US | Search,Ecommerce,,"help with ecommerce business",Phrase,Enabled
+Evanko | Business Advice | US | Search,Ecommerce,,[ecommerce operations consultant],Exact,Enabled
+Evanko | Business Advice | US | Search,Ecommerce,,"ecommerce operations consultant",Phrase,Enabled
+Evanko | Business Advice | US | Search,AI And Automation,,[ai automation for small business],Exact,Enabled
+Evanko | Business Advice | US | Search,AI And Automation,,"ai automation for small business",Phrase,Enabled
+Evanko | Business Advice | US | Search,AI And Automation,,[business automation advice],Exact,Enabled
+Evanko | Business Advice | US | Search,AI And Automation,,"business automation advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,AI And Automation,,[ai consulting for small business],Exact,Enabled
+Evanko | Business Advice | US | Search,AI And Automation,,"ai consulting for small business",Phrase,Enabled
+Evanko | Business Advice | US | Search,AI And Automation,,[workflow automation consultant],Exact,Enabled
+Evanko | Business Advice | US | Search,AI And Automation,,"workflow automation consultant",Phrase,Enabled
+Evanko | Business Advice | US | Search,Software And APIs,,[software development advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Software And APIs,,"software development advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Software And APIs,,[small business app development],Exact,Enabled
+Evanko | Business Advice | US | Search,Software And APIs,,"small business app development",Phrase,Enabled
+Evanko | Business Advice | US | Search,Software And APIs,,[api development consultant],Exact,Enabled
+Evanko | Business Advice | US | Search,Software And APIs,,"api development consultant",Phrase,Enabled
+Evanko | Business Advice | US | Search,Software And APIs,,[internal tool development],Exact,Enabled
+Evanko | Business Advice | US | Search,Software And APIs,,"internal tool development",Phrase,Enabled
+Evanko | Business Advice | US | Search,Nonprofit,,[nonprofit business advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Nonprofit,,"nonprofit business advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Nonprofit,,[nonprofit operations consultant],Exact,Enabled
+Evanko | Business Advice | US | Search,Nonprofit,,"nonprofit operations consultant",Phrase,Enabled
+Evanko | Business Advice | US | Search,Nonprofit,,[nonprofit marketing advice],Exact,Enabled
+Evanko | Business Advice | US | Search,Nonprofit,,"nonprofit marketing advice",Phrase,Enabled
+Evanko | Business Advice | US | Search,Nonprofit,,[nonprofit technology consultant],Exact,Enabled
+Evanko | Business Advice | US | Search,Nonprofit,,"nonprofit technology consultant",Phrase,Enabled
+Evanko | Business Advice | US | Search,,,job,Campaign negative,
+Evanko | Business Advice | US | Search,,,jobs,Campaign negative,
+Evanko | Business Advice | US | Search,,,hiring,Campaign negative,
+Evanko | Business Advice | US | Search,,,career,Campaign negative,
+Evanko | Business Advice | US | Search,,,careers,Campaign negative,
+Evanko | Business Advice | US | Search,,,salary,Campaign negative,
+Evanko | Business Advice | US | Search,,,internship,Campaign negative,
+Evanko | Business Advice | US | Search,,,internships,Campaign negative,
+Evanko | Business Advice | US | Search,,,course,Campaign negative,
+Evanko | Business Advice | US | Search,,,courses,Campaign negative,
+Evanko | Business Advice | US | Search,,,certification,Campaign negative,
+Evanko | Business Advice | US | Search,,,degree,Campaign negative,
+Evanko | Business Advice | US | Search,,,training,Campaign negative,
+Evanko | Business Advice | US | Search,,,template,Campaign negative,
+Evanko | Business Advice | US | Search,,,templates,Campaign negative,
+Evanko | Business Advice | US | Search,,,pdf,Campaign negative,
+Evanko | Business Advice | US | Search,,,book,Campaign negative,
+Evanko | Business Advice | US | Search,,,books,Campaign negative,
+Evanko | Business Advice | US | Search,,,definition,Campaign negative,
+Evanko | Business Advice | US | Search,,,calculator,Campaign negative,
+Evanko | Business Advice | US | Search,,,calculators,Campaign negative,
+Evanko | Business Advice | US | Search,,,"free trial",Campaign negative,
+Evanko | Business Advice | US | Search,,,grant,Campaign negative,
+Evanko | Business Advice | US | Search,,,grants,Campaign negative,
+Evanko | Business Advice | US | Search,,,"grant writing",Campaign negative,
+Evanko | Business Advice | US | Search,,,"government funding",Campaign negative,
+Evanko | Business Advice | US | Search,,,loan,Campaign negative,
+Evanko | Business Advice | US | Search,,,loans,Campaign negative,
+Evanko | Business Advice | US | Search,,,chatgpt,Campaign negative,

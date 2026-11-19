@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 
 const ADS_DESTINATION = 'AW-18496123081';
+const BUSINESS_ADVICE_CONVERSION_DESTINATION = 'AW-18496123081/cJOnCLKl17MdEMnh0fNE';
 const GA4_DESTINATION = 'G-0QDYT5EN8K';
 const LINKED_DOMAINS = ['evanko.co', 'www.evanko.co', 'learn.flashfluent.app'];
 
@@ -28,6 +29,9 @@ export function trackBusinessAdviceRequestSubmitted() {
   window.gtag?.('event', 'business_advice_request_submitted', {
     form_name: 'business_advice_request',
     page_path: '/business-advice',
+  });
+  window.gtag?.('event', 'conversion', {
+    send_to: BUSINESS_ADVICE_CONVERSION_DESTINATION,
   });
 }
 
